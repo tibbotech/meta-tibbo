@@ -15,8 +15,8 @@ BBLAYERS += " \
 BBLAYERS += "##OEROOT##/../meta-tibbo"
 BBLAYERS += "##OEROOT##/../meta-sunplus"
 
+BBLAYERS += "##OEROOT##/../meta-qt5"
 # uncomment if need
-#BBLAYERS += "##OEROOT##/../meta-qt5"
 #BBLAYERS += "##OEROOT##/../meta-openamp"
 
 # tensorflow (face recognition)
