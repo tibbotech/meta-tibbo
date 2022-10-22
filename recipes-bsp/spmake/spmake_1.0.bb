@@ -7,8 +7,6 @@ LICENSE = "GPLv3+"
 SRCREV="${AUTOREV}"
 
 SRC_URI  = "git://github.com/tibbotech/spmake.git;protocol=https;branch=main"
-#SRC_URI += "file://sp_make.mk"
-#SRC_URI += "file://sp_make.inc.mk"
 
 S="${WORKDIR}/git"
 
