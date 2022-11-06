@@ -22,7 +22,7 @@ Additional targets are:
 
 Examples:
     bitbake imgm-spmn
-    bitbakle mc::img-tps-free
+    bitbake mc::img-tps-free
     bitbake mc:tpp-tppg2-arm5:imgf-xboot
     DISTRO=tin bitbake mc::img-tps-tini
     bitbake -c populate_sdk mc:tpp-tppg2-arm5:imgf-xboot
