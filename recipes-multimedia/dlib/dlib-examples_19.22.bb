@@ -2,7 +2,7 @@ require dlib.inc
 
 S = "${WORKDIR}/git/examples"
 
-DEPENDS += "python"
+DEPENDS += "${PYTHON_PN}"
 
 do_install() {
  install -d ${D}/opt/dlib-examples

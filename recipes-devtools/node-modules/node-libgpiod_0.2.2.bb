@@ -19,7 +19,7 @@ do_install:prepend() {
 DEPENDS += "libgpiod"
 
 #RDEPENDS:${PN}-node-gyp += "bash"
-#RDEPENDS:${PN}-node-gyp += "python"
+#RDEPENDS:${PN}-node-gyp += "${PYTHON_PN}"
 RDEPENDS:${PN} += "nodejs"
 
 LIC_FILES_CHKSUM = "file://LICENSE;md5=3139c67aa6d059119a94c6379f370044"

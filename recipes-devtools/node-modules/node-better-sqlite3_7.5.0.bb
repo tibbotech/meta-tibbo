@@ -18,7 +18,7 @@ do_install:prepend() {
 
 
 #RDEPENDS:${PN}-node-gyp += "bash"
-#RDEPENDS:${PN}-node-gyp += "python"
+#RDEPENDS:${PN}-node-gyp += "${PYTHON_PN}"
 RDEPENDS:${PN} += "nodejs"
 
 LIC_FILES_CHKSUM = "file://LICENSE;md5=daaa6378e66cac5c1de3eabc51c6020f"
