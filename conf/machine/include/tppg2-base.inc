@@ -60,9 +60,40 @@ UBOOT_LOADADDRESS = "0x00308000"
 IMAGE_BOOT_FILES  = "u-boot.bin-a7021_emmc.img;u-boot.img"
 IMAGE_BOOT_FILES += "sdcard_uEnv.txt;uEnv.txt"
 #IMAGE_BOOT_FILES += "a926.img"
-IMAGE_BOOT_FILES += "${KERNEL_IMAGETYPE}-initramfs-tppg2.img;${KERNEL_IMAGETYPE}"
+IMAGE_BOOT_FILES += "${KERNEL_IMAGETYPE}-initramfs-${MACHINE}.img;${KERNEL_IMAGETYPE}"
 #IMAGE_BOOT_FILES += "ISPBOOOT.BIN"
 # move this
 IMAGE_BOOT_FILES += "sp7021-ltpp3g2-empty.dtb;dtb"
 
 PACKAGE_FEED_ARCHS = "cortexa9hf_neon noarch ${MACHINE}"
+
+# new for ISP
+IMAGE_CLASSES += "isp_image"
+IMAGE_FSTYPES += "isp"
+
+IMAGE_TYPEDEP_isp += "ext4"
+
+ISP_CONFIG += "emmc0 test1"
+
+ISP_BOOTYP[emmc0] = "emmc"
+
+ISP_CONFIG[emmc0] += "xboot1;../${MACHINE}-arm5/xboot-emmc.img;0x0"
+ISP_CONFIG[emmc0] += "uboot1;u-boot.bin-a7021_ppg2.img;0x22"
+ISP_CONFIG[emmc0] += "uboot2;u-boot.bin-a7021_ppg2.img;0x822"
+ISP_CONFIG[emmc0] += "env;;0x1022"
+ISP_CONFIG[emmc0] += "env_redund;;0x1422"
+ISP_CONFIG[emmc0] += "nonos;../${MACHINE}-arm5/a926-empty.img;0x1822"
+ISP_CONFIG[emmc0] += "dtb;sp7021-ltpp3g2revD.dtb;0x2022"
+ISP_CONFIG[emmc0] += "kernel;${KERNEL_IMAGETYPE}-initramfs-${MACHINE}.img;0x2222"
+ISP_CONFIG[emmc0] += "rootfs;${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.ext4;0x12222"
+
+ISP_SETBOO[emmc0] += "../${MACHINE}-arm5/xboot-emmc.img;0x0"
+ISP_SETBOO[emmc0] += "u-boot.bin-a7021_ppg2.img;0x10000"
+
+ISP_BOOTYP[test1] = "emmc"
+
+ISP_CONFIG[test1] += "part0;file0;off0"
+ISP_CONFIG[test1] += "part1;file1;off1"
+
+ISP_SETBOO[test1] += "someimg0;0x111"
+ISP_SETBOO[test1] += "someimg2;0x222"

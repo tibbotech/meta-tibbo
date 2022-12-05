@@ -1,12 +1,12 @@
 Targets are:
-    mc:tpp-tppg2-arm5:imgf-xboot // (0) Xboot + a926 FW
-    mc::img-tps-tini	// (1) Small CLI systemd-only
-    mc::img-tps-free	// (2) = (1) + package management, gdb, tcf-agent
-    mc::img-tps-base	// (3) = (2) + Tibbo private apps
+    mc:tppg2-arm5:imgf-xboot	// (0) Xboot + a926 FW
+    mc:tppg2:img-tps-tini	// (1) Small CLI systemd-only
+    mc:tppg2:img-tps-free	// (2) = (1) + package management, gdb, tcf-agent
+    mc:tppg2:img-tps-base	// (3) = (2) + Tibbo private apps
     imim-spmn	// (0) + (2)
     imgm-spmt	// (0) + (3)
     imgm-spba	// Build Applience image
-    mc::img-tps-repo	// Tibbo packages collection
+    mc:tppg2:img-tps-repo	// Tibbo packages collection
 
 DISTROs:
     tps		// (default) Systemd enabled + WiFi/BT/usb + X11/Wayland
@@ -22,8 +22,8 @@ Additional targets are:
 
 Examples:
     bitbake imgm-spmn
-    bitbake mc::img-tps-free
-    bitbake mc:tpp-tppg2-arm5:imgf-xboot
-    DISTRO=tin bitbake mc::img-tps-tini
-    bitbake -c populate_sdk mc:tpp-tppg2-arm5:imgf-xboot
-    bitbake -c populate_sdk mc::img-tps-free
+    bitbake mc:tppg2:img-tps-free
+    bitbake mc:tppg2-arm5:imgf-xboot
+    DISTRO=tin bitbake mc:tppg2:img-tps-tini
+    bitbake -c populate_sdk mc:tppg2-arm5:imgf-xboot
+    bitbake -c populate_sdk mc:tppg2:img-tps-free
