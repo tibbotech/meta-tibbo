@@ -6,7 +6,7 @@ Targets are:
     imim-spmn	// (0) + (2)
     imgm-spmt	// (0) + (3)
     imgm-spba	// Build Applience image
-    mc:tppg2:img-tps-repo	// Tibbo packages collection
+    MACHINE=tppg2 mc:tppg2:img-tps-repo	// Tibbo packages collection
 
 DISTROs:
     tps		// (default) Systemd enabled + WiFi/BT/usb + X11/Wayland
@@ -21,9 +21,9 @@ Additional targets are:
     meta-ide-support
 
 Examples:
-    bitbake imgm-spmn
-    bitbake mc:tppg2:img-tps-free
-    bitbake mc:tppg2-arm5:imgf-xboot
-    DISTRO=tin bitbake mc:tppg2:img-tps-tini
-    bitbake -c populate_sdk mc:tppg2-arm5:imgf-xboot
-    bitbake -c populate_sdk mc:tppg2:img-tps-free
+    MACHINE=tppg2 bitbake imgm-spmn
+    MACHINE=tppg2 bitbake mc:tppg2:img-tps-free
+    MACHINE=tppg2 bitbake mc:tppg2-arm5:imgf-xboot
+    MACHINE=tppg2 DISTRO=tin bitbake mc:tppg2:img-tps-tini
+    MACHINE=tppg2 bitbake -c populate_sdk mc:tppg2-arm5:imgf-xboot
+    MACHINE=tppg2 bitbake -c populate_sdk mc:tppg2:img-tps-free
