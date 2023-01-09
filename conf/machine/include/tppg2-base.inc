@@ -73,7 +73,7 @@ IMAGE_FSTYPES += "isp"
 
 IMAGE_TYPEDEP_isp += "ext4"
 
-ISP_CONFIG += "emmc0 test1"
+ISP_CONFIG += "emmc0"
 
 ISP_BOOTYP[emmc0] = "emmc"
 
@@ -90,10 +90,11 @@ ISP_CONFIG[emmc0] += "rootfs;${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.ext4;0x12222"
 ISP_SETBOO[emmc0] += "../${MACHINE}-arm5/xboot-emmc.img;0x0"
 ISP_SETBOO[emmc0] += "u-boot.bin-a7021_ppg2.img;0x10000"
 
-ISP_BOOTYP[test1] = "emmc"
-
-ISP_CONFIG[test1] += "part0;file0;off0"
-ISP_CONFIG[test1] += "part1;file1;off1"
-
-ISP_SETBOO[test1] += "someimg0;0x111"
-ISP_SETBOO[test1] += "someimg2;0x222"
+#ISP_CONFIG += "test1"
+#ISP_BOOTYP[test1] = "emmc"
+#
+#ISP_CONFIG[test1] += "part0;file0;off0"
+#ISP_CONFIG[test1] += "part1;file1;off1"
+#
+#ISP_SETBOO[test1] += "someimg0;0x111"
+#ISP_SETBOO[test1] += "someimg2;0x222"
