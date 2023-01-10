@@ -9,7 +9,8 @@ inherit allarch
 
 S = "${WORKDIR}/${PN}"
 
-SRC_URI  = "file://current.ini"
+SRC_URI:tppg1  = "file://current.ini"
+SRC_URI:tppg2  = "file://current.ini"
 
 FILES:${PN}  = "/opt/tps-shared/*"
 

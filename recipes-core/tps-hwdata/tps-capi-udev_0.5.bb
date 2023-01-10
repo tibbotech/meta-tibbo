@@ -8,7 +8,8 @@ inherit allarch useradd
 
 S = "${WORKDIR}/${PN}"
 
-SRC_URI  = "file://capi-devs.rules"
+SRC_URI:tppg1  = "file://capi-devs.rules"
+SRC_URI:tppg2  = "file://capi-devs.rules"
 
 FILES:${PN} += "/etc/*"
 

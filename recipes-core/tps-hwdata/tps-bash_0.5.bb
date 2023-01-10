@@ -6,9 +6,12 @@ SECTION = "base"
 
 S = "${WORKDIR}"
 
-SRC_URI  = "file://pins"
-SRC_URI += "file://lcdb"
-SRC_URI += "file://rpmsbase.sh"
+SRC_URI:tppg1  = "file://pins"
+SRC_URI:tppg2  = "file://pins"
+SRC_URI:tppg1 += "file://lcdb"
+SRC_URI:tppg2 += "file://lcdb"
+SRC_URI:tppg1 += "file://rpmsbase.sh"
+SRC_URI:tppg2 += "file://rpmsbase.sh"
 
 FILES:${PN}  = "/opt/tps-shared/*"
 FILES:${PN} += "/etc/profile.d/*"
