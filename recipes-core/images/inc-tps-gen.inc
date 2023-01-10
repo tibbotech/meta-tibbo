@@ -2,7 +2,7 @@
 
 # generate locales (distro conf), but do not install
 IMAGE_LINGUAS = "en-us en-gb"
-#IMAGE_LINGUAS = ""
+LOCALE_UTF8_ONLY="1"
 
 SYSTEMD_AUTO_ENABLE_busybox-syslog = "disable"
 # we have systemd !
