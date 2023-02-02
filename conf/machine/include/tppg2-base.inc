@@ -6,7 +6,7 @@ XSERVER ?= "xserver-xorg \
 
 MACHINE_EXTRA_RRECOMMENDS = " kernel-modules kernel-devicetree"
 
-EXTRA_IMAGEDEPENDS += "u-boot"
+EXTRA_IMAGEDEPENDS += "virtual/bootloader"
 EXTRA_IMAGEDEPENDS += "dtc-native"
 do_image_wic[depends] += "isp-native:do_deploy"
 
@@ -68,6 +68,7 @@ IMAGE_BOOT_FILES += "sp7021-ltpp3g2-empty.dtb;dtb"
 PACKAGE_FEED_ARCHS = "cortexa9hf_neon noarch ${MACHINE}"
 
 # new for ISP
+do_image_isp[depends] += "mc:${MACHINE}-arm5:imgf-xboot:do_deploy"
 IMAGE_CLASSES += "isp_image"
 IMAGE_FSTYPES += "isp"
 

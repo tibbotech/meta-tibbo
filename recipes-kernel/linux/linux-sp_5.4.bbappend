@@ -1,4 +1,4 @@
-FILESEXTRAPATHS:prepend := "${THISDIR}/linux-sp:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/linux-sp-5.4:"
 
 COMPATIBLE_MACHINE:append = "|tppg2"
 
@@ -57,5 +57,6 @@ KERNEL_FEATURES:append = " ${@bb.utils.contains('MACHINE_FEATURES', 'vfat', 'cfg
 KERNEL_FEATURES:append = " custom/tunnel/udp.scc"
 KERNEL_FEATURES:append = " cgl/net/l2tp.scc"
 KERNEL_FEATURES:append = " custom/netfilter/addrtype.scc"
+KERNEL_FEATURES:append = " cfg/wifi/tppg2_brcm.scc"
 
 KERNEL_DEVICETREE:append:tppg2 = " sp7021-ltpp3g2-empty.dtb"

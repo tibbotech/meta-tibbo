@@ -1,0 +1,4 @@
+define KFEATURE_DESCRIPTION "Disable other vendors WiFi"
+define KFEATURE_COMPATIBILITY board
+
+kconf hardware no_other_vendors.cfg

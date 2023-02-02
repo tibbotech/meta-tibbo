@@ -1,29 +1,39 @@
-Targets are:
-    mc:tppg2-arm5:imgf-xboot	// (0) Xboot + a926 FW
-    mc:tppg2:img-tps-tini	// (1) Small CLI systemd-only
-    mc:tppg2:img-tps-free	// (2) = (1) + package management, gdb, tcf-agent
-    mc:tppg2:img-tps-base	// (3) = (2) + Tibbo private apps
-    imim-spmn	// (0) + (2)
-    imgm-spmt	// (0) + (3)
-    imgm-spba	// Build Applience image
-    MACHINE=tppg2 mc:tppg2:img-tps-repo	// Tibbo packages collection
+Image building:
+ MACHINE=xMx [DISTRO=xDx] bitbake mc:xMx:xIx
+SDK building:
+ MACHINE=xMx [DISTRO=xDx] bitbake -c populate_sdk mc:xMx:xIx
 
-DISTROs:
-    tps		// (default) Systemd enabled + WiFi/BT/usb + X11/Wayland
-    tin		// rc-based test image
+ , where
+    xMx is machine {tppg2,tppg2-arm5,tppg1}
+    xDx is distro {tps,tin}
+    xIx is image name
 
-SDK generation:
-    -c populate_sdk (0),(3)
+Machines:
+ "tppg2" is TPP gen 2 board (sp7021-SoC based)
+ "tppg2-arm5" is firmware for TPPg2 coprocessor
+ "tppg1" is TPP gen 1 board (discontinued)
 
-Additional targets are:
-    meta-toolchain
-    adt-installer
-    meta-ide-support
+Distros:
+ "tps" is (default) Systemd enabled + WiFi/BT/usb + X11/Wayland
+ "tin" is small rc-based test example
+
+Images:
+ "imgf-xboot" is TPPg2 SoC co-processor only code (Xboot + a926 FW)
+ "img-tst-tini" (1) is small CLI systemd-only image example
+ "img-tps-free" (2) = (1) + package management, gdb, tcf-agent
+ "img-tps-base" (3) = (2) + Tibbo private apps
+ "img-tps-repo" image to generate Tibbo packages repository
+
+Additional images:
+ imim-spmn	// (0) + (2)
+ imgm-spmt	// (0) + (3)
+ imgm-spba	// Build Applience image
+ meta-toolchain
+ adt-installer
+ meta-ide-support
 
 Examples:
-    MACHINE=tppg2 bitbake imgm-spmn
-    MACHINE=tppg2 bitbake mc:tppg2:img-tps-free
-    MACHINE=tppg2 bitbake mc:tppg2-arm5:imgf-xboot
-    MACHINE=tppg2 DISTRO=tin bitbake mc:tppg2:img-tps-tini
-    MACHINE=tppg2 bitbake -c populate_sdk mc:tppg2-arm5:imgf-xboot
-    MACHINE=tppg2 bitbake -c populate_sdk mc:tppg2:img-tps-free
+ MACHINE=tppg2 bitbake mc:tppg2:img-tps-free
+ MACHINE=tppg2 bitbake mc:tppg2-arm5:imgf-xboot
+ MACHINE=tppg2 DISTRO=tin bitbake mc:tppg2:img-tst-tini
+ MACHINE=tppg2 bitbake -c populate_sdk mc:tppg2:img-tps-free
