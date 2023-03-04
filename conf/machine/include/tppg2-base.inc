@@ -74,6 +74,8 @@ IMAGE_FSTYPES += "isp"
 
 IMAGE_TYPEDEP_isp += "ext4"
 
+ISP_VAR_DTB ?= "sp7021-ltpp3g2revD.dtb"
+
 ISP_CONFIG += "emmc0"
 
 ISP_BOOTYP[emmc0] = "emmc"
@@ -84,7 +86,7 @@ ISP_CONFIG[emmc0] += "uboot2;u-boot.bin-a7021_ppg2.img;0x822"
 ISP_CONFIG[emmc0] += "env;;0x1022"
 ISP_CONFIG[emmc0] += "env_redund;;0x1422"
 ISP_CONFIG[emmc0] += "nonos;../${MACHINE}-arm5/a926-empty.img;0x1822"
-ISP_CONFIG[emmc0] += "dtb;sp7021-ltpp3g2revD.dtb;0x2022"
+ISP_CONFIG[emmc0] += "dtb;${ISP_VAR_DTB};0x2022"
 ISP_CONFIG[emmc0] += "kernel;${KERNEL_IMAGETYPE}-initramfs-${MACHINE}.img;0x2222"
 ISP_CONFIG[emmc0] += "rootfs;${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.ext4;0x12222"
 
