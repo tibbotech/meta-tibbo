@@ -1,0 +1,37 @@
+--- a/dhd_gpio.c	2023-03-07 15:26:15.491763036 +0300
++++ a/dhd_gpio.c	2023-03-07 15:28:55.621772275 +0300
+@@ -9,6 +9,9 @@
+ #include <linux/mmc/host.h>
+ #include <linux/mmc/sdio_func.h>
+ #endif /* defined(BUS_POWER_RESTORE) && defined(BCMSDIO) */
++// by Dv
++#include <linux/of_gpio.h>
++// by Dv /
+ 
+ #ifdef CONFIG_DHD_USE_STATIC_BUF
+ #ifdef BCMDHD_MDRIVER
+@@ -261,6 +264,24 @@
+ #endif
+ 	{
+ 		gpio_wl_reg_on = 82;
++// by Dv
++int dv_i = -1;
++//struct device_node *dv_dn = of_find_node_by_name( NULL, "sdio");
++struct device_node *dv_dn = of_find_node_by_name( NULL, "bcrmf");
++//struct device_node *dv_dn0 = NULL;
++//while ( ( dv_dn0 = of_get_next_child( dv_dn, dv_dn0))) printf( "xcxx:%s\n", dv_dn0->name);
++//if ( dv_dn) printf( "%s():%d %s\n", __FUNCTION__, __LINE__, dv_dn->name);
++	if ( dv_dn) {
++	   dv_i = of_get_named_gpio( dv_dn, "reset-gpios", 0);
++	   printf( "%s: got reset-gpios:%d\n", __FUNCTION__, dv_i);
++	}
++	if ( !gpio_is_valid( dv_i)) {
++	  printf( "%s: can't get reset-gpios\n", __FUNCTION__);
++	  dv_i = -1;
++	}
++	if ( dv_i >= 0) gpio_wl_reg_on = dv_i;
++// by Dv /
++
+ #ifdef CUSTOMER_OOB
+ 		gpio_wl_host_wake = -1;
+ #endif

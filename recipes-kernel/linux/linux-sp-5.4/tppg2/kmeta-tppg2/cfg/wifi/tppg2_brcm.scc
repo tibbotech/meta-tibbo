@@ -2,7 +2,7 @@ define KFEATURE_DESCRIPTION "Enable WiFi for TPPg2"
 define KFEATURE_COMPATIBILITY board
 
 include features/wifi/wifi-common.scc
-include bsp/pentagram/wifi/sdio.scc
+include bsp/pentagram/sdio/sdio.scc
 include no_other_vendors.scc
 include wext.scc
 

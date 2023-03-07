@@ -1,0 +1,16 @@
+--- a/Makefile	2023-03-07 15:51:21.347849918 +0300
++++ a/Makefile	2023-03-07 16:50:17.211053923 +0300
+@@ -286,6 +286,13 @@
+ #all: bcmdhd_pcie bcmdhd_sdio bcmdhd_usb
+ all: bcmdhd_sdio
+ 
++ifdef CONFIG_BCMDHD_FW_PATH
++EXTRA_CFLAGS += -DCONFIG_BCMDHD_FW_PATH=$(CONFIG_BCMDHD_FW_PATH)
++endif
++ifdef CONFIG_BCMDHD_NVRAM_PATH
++EXTRA_CFLAGS += -DCONFIG_BCMDHD_NVRAM_PATH=$(CONFIG_BCMDHD_NVRAM_PATH)
++endif
++
+ bcmdhd_pcie:
+ 	$(warning "building BCMDHD_PCIE..........")
+ 	$(MAKE) -C $(LINUXDIR) M=$(PWD) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) modules CONFIG_BCMDHD=m CONFIG_BCMDHD_PCIE=y

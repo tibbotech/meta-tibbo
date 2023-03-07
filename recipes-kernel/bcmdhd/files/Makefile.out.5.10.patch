@@ -1,0 +1,22 @@
+--- a/Makefile	2023-01-26 12:42:04.000000000 +0300
++++ a/Makefile	2023-03-07 15:49:43.591844278 +0300
+@@ -283,7 +283,8 @@
+ $(MODULE_NAME)-objs += $(DHDOFILES)
+ ccflags-y := $(EXTRA_CFLAGS)
+ 
+-all: bcmdhd_pcie bcmdhd_sdio bcmdhd_usb
++#all: bcmdhd_pcie bcmdhd_sdio bcmdhd_usb
++all: bcmdhd_sdio
+ 
+ bcmdhd_pcie:
+ 	$(warning "building BCMDHD_PCIE..........")
+@@ -297,6 +298,9 @@
+ 	$(warning "building BCMDHD_USB..........")
+ 	$(MAKE) -C $(LINUXDIR) M=$(PWD) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) modules CONFIG_BCMDHD=m CONFIG_BCMDHD_USB=y
+ 
++modules_install:
++	$(MAKE) -C $(LINUXDIR) M=$(PWD) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) modules_install
++
+ clean:
+ 	rm -rf *.o *.ko *.mod.c *~ .*.cmd *.o.cmd .*.o.cmd *.mod \
+ 	Module.symvers modules.order .tmp_versions modules.builtin

@@ -1,0 +1,11 @@
+--- a/dhd_gpio.c	2023-03-07 14:22:50.390543497 +0300
++++ a/dhd_gpio.c	2023-03-07 15:26:15.491763036 +0300
+@@ -260,7 +260,7 @@
+ 	} else
+ #endif
+ 	{
+-		gpio_wl_reg_on = 2;
++		gpio_wl_reg_on = 82;
+ #ifdef CUSTOMER_OOB
+ 		gpio_wl_host_wake = -1;
+ #endif

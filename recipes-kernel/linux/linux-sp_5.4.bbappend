@@ -25,9 +25,9 @@ SRC_URI += "file://dts/sp7021-ltpp3g2revD.dts.wifionly.patch"
 SRC_URI += "file://mcp251x-dbg/mcp251x.c.dbg0.patch"
 SRC_URI += "file://mcp251x-dbg/mcp251x.c.clk0.patch"
 
-# set GPIO to 83 for ltpp3g2
-SRC_URI += "file://bcmdhd-gpio/dhd_gpio.c.gpio.patch"
-#SRC_URI += "file://bcmdhd-gpio/dhd_gpio.c.of.patch"
+## set GPIO to 83 for ltpp3g2
+#SRC_URI += "file://bcmdhd-gpio/dhd_gpio.c.gpio.patch"
+##SRC_URI += "file://bcmdhd-gpio/dhd_gpio.c.of.patch"
 
 # mcp251xfd mainline backport
 SRC_URI += "file://mcp251xfd-backport/mcp251xfd.tar.gz"
@@ -44,7 +44,7 @@ do_patch:append() {
 }
 
 #RDEPENDS:kernel-module-bcmdhd += "${@bb.utils.contains('DISTRO_FEATURES', 'wifi', 'bcmdhd-firmware', '', d)}"
-RDEPENDS:kernel-module-bcmdhd += "bcmdhd-firmware"
+#RRECOMMENDS:${PN} += "kernel-module-bcmdhd"
 
 #KERNEL_EXTRA_FEATURES += "features/initramfs/initramfs.scc"
 
@@ -57,6 +57,6 @@ KERNEL_FEATURES:append = " ${@bb.utils.contains('MACHINE_FEATURES', 'vfat', 'cfg
 KERNEL_FEATURES:append = " custom/tunnel/udp.scc"
 KERNEL_FEATURES:append = " cgl/net/l2tp.scc"
 KERNEL_FEATURES:append = " custom/netfilter/addrtype.scc"
-KERNEL_FEATURES:append = " cfg/wifi/tppg2_brcm.scc"
+#KERNEL_FEATURES:append = " cfg/wifi/tppg2_brcm.scc"
 
 KERNEL_DEVICETREE:append:tppg2 = " sp7021-ltpp3g2-empty.dtb"

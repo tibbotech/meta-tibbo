@@ -44,7 +44,7 @@ do_patch:append() {
 }
 
 #RDEPENDS:kernel-module-bcmdhd += "${@bb.utils.contains('DISTRO_FEATURES', 'wifi', 'bcmdhd-firmware', '', d)}"
-RDEPENDS:kernel-module-bcmdhd += "bcmdhd-firmware"
+#RRECOMMENDS:${PN} += "kernel-module-bcmdhd"
 
 #KERNEL_EXTRA_FEATURES += "features/initramfs/initramfs.scc"
 
@@ -57,6 +57,7 @@ KERNEL_FEATURES:append = " ${@bb.utils.contains('MACHINE_FEATURES', 'vfat', 'cfg
 KERNEL_FEATURES:append = " custom/tunnel/udp.scc"
 KERNEL_FEATURES:append = " cgl/net/l2tp.scc"
 KERNEL_FEATURES:append = " custom/netfilter/addrtype.scc"
-KERNEL_FEATURES:append = " cfg/wifi/tppg2_brcm.scc"
+KERNEL_FEATURES:append = " cfg/wifi/tppg2_brcmI.scc"
+KERNEL_FEATURES:append = " features/wireguard/wireguard.scc"
 
 KERNEL_DEVICETREE:append:tppg2 = " sp7021-ltpp3g2-empty.dtb"

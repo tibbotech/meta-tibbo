@@ -6,4 +6,4 @@ include bsp/pentagram/sdio/sdio.scc
 include no_other_vendors.scc
 include wext.scc
 
-kconf hardware tppg2_brcm.cfg
+kconf hardware tppg2_brcmI.cfg
