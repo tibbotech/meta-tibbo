@@ -57,6 +57,7 @@ KERNEL_FEATURES:append = " ${@bb.utils.contains('MACHINE_FEATURES', 'vfat', 'cfg
 KERNEL_FEATURES:append = " custom/tunnel/udp.scc"
 KERNEL_FEATURES:append = " cgl/net/l2tp.scc"
 KERNEL_FEATURES:append = " custom/netfilter/addrtype.scc"
+#KERNEL_FEATURES:append = " cfg/wifi/tppg2_brcm.scc"
 KERNEL_FEATURES:append = " cfg/wifi/tppg2_brcmI.scc"
 KERNEL_FEATURES:append = " features/wireguard/wireguard.scc"
 
