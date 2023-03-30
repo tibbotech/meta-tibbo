@@ -13,3 +13,6 @@ Secure tunnels with fast and lightweight [WireGuard](WireGuard).
 Teting [Matchbox GUI](matchbox) - simplest complete desktop solution for 
 embedded devices.
 
+## Encrypting FS
+
+[Encrypt](encrypt) filesystem

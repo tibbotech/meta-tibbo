@@ -27,7 +27,7 @@ SRC_URI += "file://mcp251x-dbg/mcp251x.c.clk0.patch"
 
 ## set GPIO to 83 for ltpp3g2
 #SRC_URI += "file://bcmdhd-gpio/dhd_gpio.c.gpio.patch"
-##SRC_URI += "file://bcmdhd-gpio/dhd_gpio.c.of.patch"
+#SRC_URI += "file://bcmdhd-gpio/dhd_gpio.c.of.patch"
 
 # mcp251xfd mainline backport
 SRC_URI += "file://mcp251xfd-backport/mcp251xfd.tar.gz"
