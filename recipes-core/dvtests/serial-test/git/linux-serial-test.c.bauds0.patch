@@ -1,6 +1,6 @@
---- a/linux-serial-test.c	2021-06-09 01:20:07.458238377 +0300
-+++ a/linux-serial-test.c	2021-06-29 01:48:09.065385722 +0300
-@@ -148,6 +148,54 @@
+--- a/linux-serial-test.c	2023-04-22 22:55:41.482088016 +0300
++++ a/linux-serial-test.c	2023-04-23 00:29:17.316034459 +0300
+@@ -181,6 +181,42 @@
  static int get_baud(int baud)
  {
  	switch (baud) {
@@ -40,18 +40,6 @@
 +	case 600:
 +		return B600;
 +#endif
-+#ifdef B1200
-+	case 1200:
-+		return B1200;
-+#endif
-+#ifdef B2400
-+	case 2400:
-+		return B2400;
-+#endif
-+#ifdef B4800
-+	case 4800:
-+		return B4800;
-+#endif
- 	case 9600:
- 		return B9600;
- 	case 19200:
+ 	case 1200:
+ 		return B1200;
+ 	case 2400:

@@ -10,7 +10,7 @@ inherit autotools
 
 SRC_URI  = "git://github.com/cbrake/linux-serial-test.git;protocol=https"
 SRC_URI += "file://git/Makefile"
-SRC_URI += "file://git/linux-serial-test.c.bauds.patch"
+SRC_URI += "file://git/linux-serial-test.c.bauds0.patch"
 
 S = "${WORKDIR}/git"
 B = "${S}"

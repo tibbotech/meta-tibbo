@@ -3,6 +3,8 @@ HOMEPAGE = "https://www.npmjs.com/package/better-sqlite3"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
 LICENSE = "MIT"
 SECTION = "nodejs/module"
+PROVIDES:${PN} += "node-sqlite3"
+RPROVIDES:${PN} += "node-sqlite3"
 
 inherit npm
 
