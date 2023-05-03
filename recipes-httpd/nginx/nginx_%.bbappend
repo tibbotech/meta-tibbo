@@ -38,10 +38,9 @@ SYSTEMD_AUTO_ENABLE:${PN} = "enable"
 ##}
 
 
-# rtmp module
+## rtmp module
 SRC_URI += "git://github.com/arut/nginx-rtmp-module.git;protocol=https;rev=master;destsuffix=nginx-rtmp-module;name=rtmp"
 EXTRA_OECONF += " --with-compat --add-dynamic-module=${WORKDIR}/nginx-rtmp-module"
-
 FILES:${PN} += "/usr/modules/ngx_rtmp_module.so"
 
 INSANE_SKIP:${PN} = "ldflags"
@@ -50,7 +49,6 @@ INSANE_SKIP:${PN} = "ldflags"
 EXTRA_OECONF += " --with-http_dav_module"
 
 # add WebDav extended commands module
-#SRC_URI += "git://github.com/arut/nginx-dav-ext-module.git;protocol=https;rev=v2.0.0;destsuffix=ngx_http_dav_ext_module;name=dav"
 SRC_URI += "git://github.com/arut/nginx-dav-ext-module.git;protocol=https;rev=v3.0.0;destsuffix=ngx_http_dav_ext_module;name=dav"
 FILES:${PN} += "/usr/modules/ngx_http_dav_ext_module.so"
 EXTRA_OECONF += " --with-compat --add-dynamic-module=${WORKDIR}/ngx_http_dav_ext_module"
