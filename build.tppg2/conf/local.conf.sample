@@ -7,7 +7,7 @@ BBMULTICONFIG ?= "${MACHINE} ${MACHINE}-arm5 qemux86-64"
 
 # PACKAGE_CLASSES ?= "package_rpm package_deb package_ipk"
 # first is default (RPM)
-PACKAGE_CLASSES ?= "package_rpm package_deb"
+PACKAGE_CLASSES ?= "package_rpm"
 
 #EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
 
