@@ -59,5 +59,6 @@ KERNEL_FEATURES:append = " cgl/net/l2tp.scc"
 KERNEL_FEATURES:append = " custom/netfilter/addrtype.scc"
 #KERNEL_FEATURES:append = " cfg/wifi/tppg2_brcm.scc"
 KERNEL_FEATURES:append = " cfg/wifi/tppg2_brcmI.scc"
+KERNEL_FEATURES:append = " tibbits/all.scc"
 
 KERNEL_DEVICETREE:append:tppg2 = " sp7021-ltpp3g2-empty.dtb"
