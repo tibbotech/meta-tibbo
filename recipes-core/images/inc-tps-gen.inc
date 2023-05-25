@@ -25,6 +25,7 @@ IMAGE_INSTALL += "u-boot-fw-utils"
 #IMAGE_INSTALL:append:tppg2 += "kernel-module-mcp251x"
 IMAGE_INSTALL:append:tppg2 += "kernel-module-mcp251xfd"
 IMAGE_INSTALL += "kernel-module-can-raw can-utils"
+IMAGE_INSTALL += "kernel-module-wire kernel-module-w1-gpio"
 IMAGE_INSTALL += "kernel-module-fuse"
 # tibbits #42, #40_2
 IMAGE_INSTALL += "kernel-module-rtc-ds3232 kernel-module-mcp4531"
