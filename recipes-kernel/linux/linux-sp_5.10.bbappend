@@ -9,7 +9,6 @@ SRC_URI += "file://dts/sp7021-ttt.dts.patch"
 SRC_URI += "file://dts/sp7021-ltpp3g2-empty.dts.patch"
 SRC_URI += "file://dts/sp7021-dsx.dts.patch"
 SRC_URI += "file://dts/sp7021-dsx.dtsi.patch"
-SRC_URI += "file://dts/sp7021-icognize.dts.patch"
 # tppg2 no BT (uart4) by default
 SRC_URI += "file://dts/sp7021-ltpp3g2revD.dts.wifionly.patch"
 
