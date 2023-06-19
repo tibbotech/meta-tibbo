@@ -45,8 +45,6 @@ do_patch:append() {
 #RDEPENDS:kernel-module-bcmdhd += "${@bb.utils.contains('DISTRO_FEATURES', 'wifi', 'bcmdhd-firmware', '', d)}"
 #RRECOMMENDS:${PN} += "kernel-module-bcmdhd"
 
-#KERNEL_EXTRA_FEATURES += "features/initramfs/initramfs.scc"
-
 KERNEL_FEATURES:append = " cfg/rpi-ovls/ovls-4.19.scc"
 
 KERNEL_FEATURES:append = "${@bb.utils.contains("MACHINE_FEATURES", "touchscreen", " custom/touchscreen/all.scc", "" ,d)}"
