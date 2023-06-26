@@ -13,15 +13,23 @@ dd if=./myimage.wic of=/dev/sd<X> bs=1M
 - for Windows please use any of 
 [the following tools](https://www.makeuseof.com/tag/10-tools-make-bootable-usb-iso-file/)
 
-3. Insert your SD card back to the PC, open its first (FAT) partition and
-[copy this file](https://archives.tibbo.com/downloads/LTPS/FW/LTPPg2/ISPBOOOT.BIN-SD)
-to your 1'st SD card partiton.
+3. Insert your SD card back to the PC, open its first (FAT) partition
+(say, /run/media/`whoami`/boot) and
 
-4. Rename ISPBOOOT.BIN-SD to ISPBOOOT.BIN
+a) cut the ISP file from <builddir>/images/tppg2sdboo/ to 64K and save it to the 1'st partition of the SD under ISPBOOOT.BIN name:
+```
+dd if=<builddir>/images/tppg2/sdboo/img-...ISP of=/run/media/`whoami`/boot/ISPBOOOT.BIN count=64 bs=1K
+```
+OR
 
-5. Sync and unmount (In windows Eject) the SD card from your PC.
+b) download [this file](https://archives.tibbo.com/downloads/LTPS/FW/LTPPg2/ISPBOOOT.BIN-SD) and save it to the 1'st partition of the SD under ISPBOOOT.BIN name:
+```
+wget -O /run/media/`whoami`/boot/ISPBOOOT.BIN https://archives.tibbo.com/downloads/LTPS/FW/LTPPg2/ISPBOOOT.BIN-SD
+```
 
-6. Insert SD card to LTPP3G2 device, short CN10 and CN11 jumpers.
+4. Sync and unmount (In windows Eject) the SD card from your PC.
 
-7. Reset the board
+5. Insert SD card to LTPP3G2 device, short CN10 and CN11 jumpers.
+
+6. Reset the board
 

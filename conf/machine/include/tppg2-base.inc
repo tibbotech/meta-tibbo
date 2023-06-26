@@ -75,6 +75,7 @@ IMAGE_TYPEDEP_isp += "ext4"
 
 ISP_VAR_DTB ?= "sp7021-ltpp3g2revD.dtb"
 
+# ISPBOOOT.BIN for EMMC
 ISP_CONFIG += "emmc0"
 
 ISP_BOOTYP[emmc0] = "emmc"
@@ -100,3 +101,9 @@ ISP_SETBOO[emmc0] += "u-boot.bin-a7021_ppg2.img;0x10000"
 #
 #ISP_SETBOO[test1] += "someimg0;0x111"
 #ISP_SETBOO[test1] += "someimg2;0x222"
+
+# ISPBOOOT.BIN for SD-bootable image (xboot only, should be 64K)
+ISP_CONFIG += "sdboo"
+ISP_BOOTYP[sdboo] = "none"
+ISP_CONFIG[sdboo] += "part0;-;-"
+ISP_SETBOO[sdboo] += "../${MACHINE}-arm5/xboot-emmc.img;0x0"
