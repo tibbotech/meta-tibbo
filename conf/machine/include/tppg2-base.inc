@@ -30,6 +30,7 @@ UBINIZE_ARGS = "-m 2048 -p 124KiB -s 2048"
 # SDcard image
 IMAGE_FSTYPES += "wic wic.bz2"
 WKS_FILE = "sdimage.tppg2.wks"
+WIC_CREATE_EXTRA_ARGS ?= "--no-fstab-update"
 
 SERIAL_CONSOLES ?= "115200;ttyS0"
 
