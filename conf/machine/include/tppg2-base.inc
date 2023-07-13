@@ -81,30 +81,60 @@ ISP_CONFIG += "emmc0"
 
 ISP_BOOTYP[emmc0] = "emmc"
 
-ISP_CONFIG[emmc0] += "xboot1;../${MACHINE}-arm5/xboot-emmc.img;0x0"
-ISP_CONFIG[emmc0] += "uboot1;u-boot.bin-a7021_ppg2.img;0x22"
-ISP_CONFIG[emmc0] += "uboot2;u-boot.bin-a7021_ppg2.img;0x822"
-ISP_CONFIG[emmc0] += "env;;0x1022"
-ISP_CONFIG[emmc0] += "env_redund;;0x1422"
-ISP_CONFIG[emmc0] += "nonos;../${MACHINE}-arm5/a926-empty.img;0x1822"
-ISP_CONFIG[emmc0] += "dtb;${ISP_VAR_DTB};0x2022"
-ISP_CONFIG[emmc0] += "kernel;${KERNEL_IMAGETYPE}-initramfs-${MACHINE}.img;0x2222"
-ISP_CONFIG[emmc0] += "rootfs;${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.ext4;0x12222"
-
 ISP_SETBOO[emmc0] += "../${MACHINE}-arm5/xboot-emmc.img;0x0"
 ISP_SETBOO[emmc0] += "u-boot.bin-a7021_ppg2.img;0x10000"
 
-#ISP_CONFIG += "test1"
-#ISP_BOOTYP[test1] = "emmc"
-#
-#ISP_CONFIG[test1] += "part0;file0;off0"
-#ISP_CONFIG[test1] += "part1;file1;off1"
-#
-#ISP_SETBOO[test1] += "someimg0;0x111"
-#ISP_SETBOO[test1] += "someimg2;0x222"
+ISP_CONFIG[emmc0] += "xboot1;../${MACHINE}-arm5/xboot-emmc.img"
+ISP_CONFIG[emmc0] += "uboot1;u-boot.bin-a7021_ppg2.img"
+ISP_CONFIG[emmc0] += "uboot2;u-boot.bin-a7021_ppg2.img"
+ISP_CONFIG[emmc0] += "env;"
+ISP_CONFIG[emmc0] += "env_redund;"
+ISP_CONFIG[emmc0] += "nonos;../${MACHINE}-arm5/a926-empty.img"
+ISP_CONFIG[emmc0] += "dtb;${ISP_VAR_DTB}"
+ISP_CONFIG[emmc0] += "kernel;${KERNEL_IMAGETYPE}-initramfs-${MACHINE}.img"
+ISP_CONFIG[emmc0] += "rootfs;${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.ext4"
+
+ISP_EMMCOF[emmc0] += "uboot1;0x22"
+ISP_EMMCOF[emmc0] += "uboot2;0x822"
+ISP_EMMCOF[emmc0] += "env;0x1022"
+ISP_EMMCOF[emmc0] += "env_redund;0x1422"
+ISP_EMMCOF[emmc0] += "nonos;0x1822"
+ISP_EMMCOF[emmc0] += "dtb;0x2022"
+ISP_EMMCOF[emmc0] += "kernel;0x2222"
+ISP_EMMCOF[emmc0] += "rootfs;0x12222"
 
 # ISPBOOOT.BIN for SD-bootable image (xboot only, should be 64K)
 ISP_CONFIG += "sdboo"
 ISP_BOOTYP[sdboo] = "none"
 ISP_CONFIG[sdboo] += "part0;-;-"
 ISP_SETBOO[sdboo] += "../${MACHINE}-arm5/xboot-emmc.img;0x0"
+
+IMAGE_TYPEDEP_isp += "ubi"
+
+# ISPBOOOT.BIN for NAND
+ISP_CONFIG += "nand0"
+
+ISP_BOOTYP[nand0] = "nand"
+
+ISP_SETBOO[nand0] += "../${MACHINE}-arm5/xboot-nand.img;0x0"
+ISP_SETBOO[nand0] += "u-boot.bin-a7021_nand.img;0x10000"
+
+ISP_CONFIG[nand0] += "xboot1;../${MACHINE}-arm5/xboot-nand.img"
+ISP_CONFIG[nand0] += "uboot1;u-boot.bin-a7021_nand.img"
+ISP_CONFIG[nand0] += "uboot2;u-boot.bin-a7021_nand.img"
+ISP_CONFIG[nand0] += "env;"
+ISP_CONFIG[nand0] += "env_redund;"
+ISP_CONFIG[nand0] += "nonos;../${MACHINE}-arm5/a926-empty.img"
+ISP_CONFIG[nand0] += "dtb;${ISP_VAR_DTB}"
+ISP_CONFIG[nand0] += "kernel;${KERNEL_IMAGETYPE}-initramfs-${MACHINE}.img"
+ISP_CONFIG[nand0] += "rootfs;${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.ubi"
+
+ISP_PFLAGS[nand0] += "xboot1;0x5"
+ISP_PFLAGS[nand0] += "uboot1;0x5"
+ISP_PFLAGS[nand0] += "uboot2;0x3"
+
+ISP_NANDOF[nand0] += "env_redund;0x80000"
+ISP_NANDOF[nand0] += "nonos;0x100000"
+ISP_NANDOF[nand0] += "dtb;0x200000"
+ISP_NANDOF[nand0] += "kernel;0x240000"
+ISP_NANDOF[nand0] += "rootfs;0x2240000"
