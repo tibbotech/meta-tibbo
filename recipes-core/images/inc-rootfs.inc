@@ -55,10 +55,10 @@ dv_rootfs_mounts() {
  echo '/dev/sdb2       /mnt/sdb2        auto       defaults,noatime,async,noauto,x-systemd.automount,nofail,x-systemd.device-timeout=5       0  2' >> ${IMAGE_ROOTFS}/etc/fstab;
 }
 
-do_image[mcdepends] += "mc:tppg2:tppg2-arm5:xboot-nand:do_deploy"
-do_image[mcdepends] += "mc:tppg2:tppg2-arm5:xboot-emmc:do_deploy"
-do_image[mcdepends] += "mc:tppg2:tppg2-arm5:xboot-emmc-us:do_deploy"
-do_image[mcdepends] += "mc:tppg2:tppg2-arm5:xboot-emmc-sd:do_deploy"
-do_image[mcdepends] += "mc:tppg2:tppg2-arm5:bnoos:do_deploy"
+do_image[mcdepends] += "mc:${BB_CURRENT_MC}:${MACHINE}-arm5:xboot-nand:do_deploy"
+do_image[mcdepends] += "mc:${BB_CURRENT_MC}:${MACHINE}-arm5:xboot-emmc:do_deploy"
+do_image[mcdepends] += "mc:${BB_CURRENT_MC}:${MACHINE}-arm5:xboot-emmc-us:do_deploy"
+do_image[mcdepends] += "mc:${BB_CURRENT_MC}:${MACHINE}-arm5:xboot-emmc-sd:do_deploy"
+do_image[mcdepends] += "mc:${BB_CURRENT_MC}:${MACHINE}-arm5:bnoos:do_deploy"
 
 #TOOLCHAIN_TARGET_TASK:append += "${@bb.utils.contains("DISTRO_FEATURES", "openamp", "libmetal open-amp", "",d)}"
