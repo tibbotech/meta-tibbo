@@ -26,7 +26,11 @@ do_deploy() {
 }
 do_deploy:append:class-native() {
 # echo "DV2: s:${S}/dtc D:${DEPLOYDIR}"
- install ${S}/dtc ${DEPLOYDIR}/dtc
+ if [ -f "${S}/dtc" ]; then
+   install ${S}/dtc ${DEPLOYDIR}/dtc
+ else
+   install ${B}/dtc ${DEPLOYDIR}/dtc
+ fi;
  install ${WORKDIR}/upd.mk ${DEPLOYDIR}/
  install ${WORKDIR}/sync.sh ${DEPLOYDIR}/
  install -m 644 ${WORKDIR}/*.its ${DEPLOYDIR}/

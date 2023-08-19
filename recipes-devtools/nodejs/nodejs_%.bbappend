@@ -1,7 +1,7 @@
 BBCLASSEXTEND = "native nativesdk"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/${BPN}:"
-SRC_URI:append:class-nativesdk += "file://environment.d-nodejs.sh"
+SRC_URI:append:class-nativesdk = " file://environment.d-nodejs.sh"
 FILES:${PN}:append:class-nativesdk = " ${SDKPATHNATIVE}"
 
 do_install:append:class-nativesdk() {
