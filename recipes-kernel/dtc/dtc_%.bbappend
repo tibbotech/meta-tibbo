@@ -2,7 +2,7 @@
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
-SRC_URI:append:class-native += "\
+SRC_URI:append:class-native = "\
  file://upd.mk \
  file://sync.sh \
  file://upd_bad.its \
