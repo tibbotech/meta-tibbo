@@ -8,7 +8,7 @@ SRCREV="${AUTOREV}"
 
 inherit autotools
 
-SRC_URI  = "git://github.com/cbrake/linux-serial-test.git;protocol=https"
+SRC_URI  = "git://github.com/cbrake/linux-serial-test.git;protocol=https;branch=master"
 SRC_URI += "file://git/Makefile"
 SRC_URI += "file://git/linux-serial-test.c.bauds0.patch"
 
