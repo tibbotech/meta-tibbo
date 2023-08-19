@@ -7,7 +7,7 @@ SRCREV="${AUTOREV}"
 
 inherit npm
 
-SRC_URI  = "git://github.com/sebi2k1/node-can.git;protocol=https"
+SRC_URI  = "git://github.com/sebi2k1/node-can.git;protocol=https;branch=master"
 
 S = "${WORKDIR}/git"
 

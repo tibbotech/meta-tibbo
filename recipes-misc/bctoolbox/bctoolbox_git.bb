@@ -4,7 +4,7 @@ inherit gitpkgv
 
 PR = "${INC_PR}.0"
 SRCREV = "019cd491db7d394c96432959f3b837e72cc86770"
-SRC_URI = "git://git.linphone.org/bctoolbox.git;commit=${SRCREV}"
+SRC_URI = "git://git.linphone.org/bctoolbox.git;commit=${SRCREV};branch=master"
 PV = "git_${SRCREV}"
 PKGV = "${GITPKGVTAG}"
 
