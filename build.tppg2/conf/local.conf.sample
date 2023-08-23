@@ -3,7 +3,7 @@
 #MACHINE ?= "tppg2"
 DISTRO ?= "tps"
 
-BBMULTICONFIG ?= "${MACHINE} tppg2-arm5 qemux86-64"
+# BBMULTICONFIG ?= "${MACHINE} sp7021-arm5 qemux86-64"
 
 # PACKAGE_CLASSES ?= "package_rpm package_deb package_ipk"
 # first is default (RPM)

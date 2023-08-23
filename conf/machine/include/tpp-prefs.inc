@@ -1,11 +1,5 @@
 
-# ---- default providers
-
-PREFERRED_PROVIDER_virtual/kernel ?= "linux-yocto"
-
-PREFERRED_PROVIDER_virtual/xserver ?= "xserver-xorg"
-
-# ---- versions
-
 PREFERRED_RPROVIDER_virtual/pinsini = "tps-pinsini-base"
 PREFERRED_RPROVIDER_virtual/dtsini = "tps-dtsini-base"
+
+EXTRA_IMAGEDEPENDS += "dtc-native"

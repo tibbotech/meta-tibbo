@@ -1,14 +1,8 @@
-XSERVER ?= "xserver-xorg \
-           xf86-input-evdev \
-           xf86-input-mouse \
-           xf86-video-fbdev \
-           xf86-video-omapfb \
-           xf86-input-keyboard"
+XSERVER += "xf86-video-omapfb"
 
 MACHINE_EXTRA_RRECOMMENDS = " kernel-modules kernel-devicetree"
 
 EXTRA_IMAGEDEPENDS += "u-boot"
-EXTRA_IMAGEDEPENDS += "dtc-native"
 
 IMAGE_FSTYPES += "tar.bz2 ubi"
 UBI_VOLNAME="rootfs"

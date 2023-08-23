@@ -1,3 +1,5 @@
 MACHINE="tppg2-arm5"
 #DISTRO="poky-tiny"
 #DISTRO="defaultsetup"
+
+# MACHINEOVERRIDES =. "sp7021-arm5:"

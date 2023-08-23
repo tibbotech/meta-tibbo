@@ -4,13 +4,13 @@ SDK building:
  MACHINE=xMx [DISTRO=xDx] bitbake -c populate_sdk mc:xMx:xIx
 
  , where
-    xMx is machine {tppg2,tppg2-arm5,tppg1}
+    xMx is machine {tppg2,sp7021-arm5,tppg1}
     xDx is distro {tps,tin}
     xIx is image name
 
 Machines:
  "tppg2" is TPP gen 2 board (sp7021-SoC based)
- "tppg2-arm5" is firmware for TPPg2 coprocessor
+ "sp7021-arm5" is firmware for TPPg2 coprocessor
  "tppg1" is TPP gen 1 board (discontinued)
 
 Distros:
@@ -34,6 +34,6 @@ Additional images:
 
 Examples:
  MACHINE=tppg2 bitbake mc:tppg2:img-tps-free
- MACHINE=tppg2 bitbake mc:tppg2-arm5:imgf-xboot
+ MACHINE=tppg2 bitbake mc:sp7021-arm5:imgf-xboot
  MACHINE=tppg2 DISTRO=tin bitbake mc:tppg2:img-tst-tini
  MACHINE=tppg2 bitbake -c populate_sdk mc:tppg2:img-tps-free
