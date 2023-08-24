@@ -11,8 +11,6 @@ SRCREV="${AUTOREV}"
 # src in /files/kern-mod-rtl8723bs_bt/*
 S = "${WORKDIR}/rtk_hciattach"
 
-#inherit base
-
 inherit systemd
 
 SRC_URI  = "file://rtk_hciattach.tar.gz"
