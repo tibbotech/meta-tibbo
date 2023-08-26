@@ -10,7 +10,7 @@ SRCREV="${AUTOREV}"
 # src in /files/ga1000-firmware/*
 S = "${WORKDIR}/git"
 
-inherit base allarch
+inherit allarch
 
 SRC_URI = "git://github.com/tibbotech/ga1000-linux-fw.git;protocol=https;branch=master"
 

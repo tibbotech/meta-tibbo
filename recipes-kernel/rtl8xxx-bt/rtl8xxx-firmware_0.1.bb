@@ -11,8 +11,6 @@ SRCREV="${AUTOREV}"
 # src in /files/kern-mod-rtl8723bs_bt/*
 S = "${WORKDIR}/rtk_hciattach"
 
-# inherit base
-
 SRC_URI  = "file://rtl8821c_config"
 SRC_URI += "file://rtl8821c_fw"
 
