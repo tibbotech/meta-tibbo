@@ -7,6 +7,8 @@ PRIORITY = "optional"
 LICENSE = "GPLv2"
 SRCREV="${AUTOREV}"
 
+FILES:${PN} += "${sysconfdir}/modules-load.d/tpsleds.conf"
+
 PACKAGES =+ "${PN}-includes"
 PACKAGE_ARCH:${PN}-includes = "all"
 
