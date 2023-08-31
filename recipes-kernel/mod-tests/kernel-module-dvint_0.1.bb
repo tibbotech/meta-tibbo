@@ -10,7 +10,7 @@ PR = "r1"
 PACKAGES =+ "${PN}-includes"
 PACKAGE_ARCH:${PN}-includes = "all"
 
-# src in /files/kern-mod-dvint/*
+# src in /files/kernel-module-dvint/*
 #S = "${WORKDIR}/${PN}"
 S = "${WORKDIR}"
 

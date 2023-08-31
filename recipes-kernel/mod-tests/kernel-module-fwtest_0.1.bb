@@ -10,7 +10,7 @@ PR = "r1"
 PACKAGES =+ "${PN}-includes"
 PACKAGE_ARCH:${PN}-includes = "all"
 
-# src in /files/kern-mod-fwtest/*
+# src in /files/kernel-module-fwtest/*
 S = "${WORKDIR}"
 
 inherit module

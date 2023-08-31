@@ -17,9 +17,4 @@ inherit module
 
 SRC_URI = "git://github.com/tibbotech/kern-mod-twg.git;protocol=https;branch=main"
 
-do_install() {
- install -m 0755 -d ${D}${base_libdir}/modules/${KERNEL_VERSION}/kernel/3rdparty
- install -m 0644 ${S}/twg${KERNEL_OBJECT_SUFFIX} ${D}${base_libdir}/modules/${KERNEL_VERSION}/kernel/3rdparty
-}
-
 LIC_FILES_CHKSUM = "file://${FILESDIR_tibbo}/common-licenses/GPL-2.0-only;md5=801f80980d171dd6425610833a22dbe6"

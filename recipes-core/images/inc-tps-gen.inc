@@ -12,8 +12,8 @@ VIRTUAL-RUNTIME_base-utils-syslog = ""
 IMAGE_INSTALL = ""
 IMAGE_INSTALL += "${@bb.utils.contains("MACHINE_FEATURES", "tpsleds", "tpsled ", "",d)}"
 IMAGE_INSTALL += "packagegroup-core-boot"
-IMAGE_INSTALL += "kern-mod-tpsid"
-IMAGE_INSTALL += "kern-mod-twg"
+IMAGE_INSTALL += "kernel-module-tpsid"
+IMAGE_INSTALL += "kernel-module-twg"
 #IMAGE_INSTALL += "kernel-modules"
 IMAGE_INSTALL += "${@bb.utils.contains("DISTRO_FEATURES", "wifi", "packagegroup-base-wifi", "",d)}"
 #IMAGE_INSTALL:append:tppg2 = " ${@bb.utils.contains("DISTRO_FEATURES", "wifi", "kernel-module-brcmfmac kernel-module-brcmutil bcmdhd-firmware", "",d)}"
@@ -31,15 +31,15 @@ IMAGE_INSTALL += "kernel-module-fuse"
 IMAGE_INSTALL += "kernel-module-rtc-ds3232 kernel-module-mcp4531"
 # OpenAMP: now it is embedded
 #IMAGE_INSTALL += "${@bb.utils.contains("DISTRO_FEATURES", "openamp", "kernel-module-uio-pdrv-genirq kernel-module-virtio-rpmsg-bus", "",d)}"
-#IMAGE_INSTALL += "kern-mod-fwtest"
+#IMAGE_INSTALL += "kernel-module-fwtest"
 
 # test
 IMAGE_INSTALL += "keyutils"
 IMAGE_INSTALL += "fscrypt"
 
-IMAGE_INSTALL:append:tppg1 = " kern-mod-ga1000v0"
+IMAGE_INSTALL:append:tppg1 = " kernel-module-ga1000v0"
 IMAGE_INSTALL:append:tppg2 = " sp7021-test-ipc"
-IMAGE_INSTALL:append:tppg2 = " kern-mod-dvirqtst"
+IMAGE_INSTALL:append:tppg2 = " kernel-module-dvirqtst"
 
 inherit core-image
 

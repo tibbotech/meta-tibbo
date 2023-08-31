@@ -11,7 +11,6 @@ SRCREV="${AUTOREV}"
 PACKAGES =+ "${PN}-includes"
 PACKAGE_ARCH:${PN}-includes = "all"
 
-# src in /files/kern-mod-rtl8723bs/*
 S = "${WORKDIR}/git"
 
 inherit module

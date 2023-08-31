@@ -25,7 +25,7 @@ IMAGE_INSTALL += "qt5everywheredemo"
 IMAGE_INSTALL += "qt5ledscreen"
 #TOOLCHAIN_HOST_TASK += "qt5-creator"
 
-#IMAGE_INSTALL += "kern-mod-rtl8723bs"
+#IMAGE_INSTALL += "kernel-module-rtl8723bs"
 
 #IMAGE_FEATURES += "splash x11-base x11-sato "
 IMAGE_FEATURES += "hwcodecs"

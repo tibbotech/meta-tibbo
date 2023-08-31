@@ -12,16 +12,10 @@ PACKAGE_ARCH:${PN}-includes = "all"
 
 S = "${WORKDIR}/git"
 
-inherit module
+inherit module kernel-module-split
 
 SRC_URI = "git://github.com/tibbotech/kern-mod-tpsid.git;protocol=https;branch=main"
 
-do_install() {
- install -m 0755 -d ${D}${base_libdir}/modules/${KERNEL_VERSION}/kernel/3rdparty
- install -m 0644 ${S}/tpsid${KERNEL_OBJECT_SUFFIX} ${D}${base_libdir}/modules/${KERNEL_VERSION}/kernel/3rdparty
- # to force load ASAP for non-builtin module: applications start too fast
- install -d ${D}${sysconfdir}/modules-load.d
- install -m 0644 ${S}/tpsid.conf ${D}${sysconfdir}/modules-load.d/
-}
+KERNEL_MODULE_AUTOLOAD += "tpsid"
 
 LIC_FILES_CHKSUM = "file://${FILESDIR_tibbo}/common-licenses/GPL-2.0-only;md5=801f80980d171dd6425610833a22dbe6"

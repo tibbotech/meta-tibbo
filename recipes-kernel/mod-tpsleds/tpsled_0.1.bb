@@ -17,6 +17,6 @@ do_install() {
   oe_runmake PREFIX=${D} install
 }
 
-RDEPENDS:${PN} += "kern-mod-tpsleds"
+RDEPENDS:${PN} += "kernel-module-tpsleds"
 
 LIC_FILES_CHKSUM = "file://${FILESDIR_tibbo}/common-licenses/GPL-2.0-only;md5=801f80980d171dd6425610833a22dbe6"

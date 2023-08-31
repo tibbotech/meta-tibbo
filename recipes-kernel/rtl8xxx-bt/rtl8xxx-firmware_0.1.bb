@@ -8,7 +8,6 @@ PR = "r1"
 
 SRCREV="${AUTOREV}"
 
-# src in /files/kern-mod-rtl8723bs_bt/*
 S = "${WORKDIR}/rtk_hciattach"
 
 SRC_URI  = "file://rtl8821c_config"

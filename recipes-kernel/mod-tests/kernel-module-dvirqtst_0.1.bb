@@ -16,9 +16,4 @@ S = "${WORKDIR}/git"
 
 inherit module
 
-do_install() {
- install -m 0755 -d ${D}${base_libdir}/modules/${KERNEL_VERSION}/kernel/3rdparty
- install -m 0644 ${S}/dv-irq-tst${KERNEL_OBJECT_SUFFIX} ${D}${base_libdir}/modules/${KERNEL_VERSION}/kernel/3rdparty
-}
-
 LIC_FILES_CHKSUM = "file://LICENSE;md5=b234ee4d69f5fce4486a80fdaf4a4263"

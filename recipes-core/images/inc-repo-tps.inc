@@ -22,6 +22,6 @@ DEPENDS += "tps-gprs"
 
 #DEPENDS += "tps-demo-phpliteadmin"
 
-#DEPENDS += "kern-mod-tfwm"
+#DEPENDS += "kernel-module-tfwm"
 
 DEPENDS += "tps-capi"
