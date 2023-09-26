@@ -18,3 +18,8 @@ PACKAGE_INSTALL = "initramfs-framework-base \
  e2fsprogs-e2fsck \
  e2fsprogs-mke2fs \
  ${VIRTUAL-RUNTIME_base-utils} udev base-passwd ${ROOTFS_BOOTSTRAP_INSTALL}"
+
+# PACKAGE_INSTALL += "initramfs-module-exec"
+
+# > Dunfell
+# PACKAGE_INSTALL += "initramfs-module-overlayroot"
