@@ -1,7 +1,7 @@
 DESCRIPTION = "DV kernel fast gpio interface test"
 HOMEPAGE = "http://tibbo.com/"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
-LICENSE = "GPLv3+"
+LICENSE = "GPL-3.0-or-later"
 SECTION = "console/utils"
 PACKAGES = "${PN}-dbg ${PN}"
 SRCREV="${AUTOREV}"

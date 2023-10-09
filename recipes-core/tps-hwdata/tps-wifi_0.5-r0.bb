@@ -1,7 +1,7 @@
 DESCRIPTION = "TPS WiFi default systemd wpa_supplicant"
 HOMEPAGE = "http://tibbo.com/"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
-LICENSE = "LGPLv3+"
+LICENSE = "GPL-3.0-or-later"
 SECTION = "base"
 
 inherit allarch systemd

@@ -1,7 +1,7 @@
 DESCRIPTION = "High-level Netfilter configurator"
 HOMEPAGE = "http://www.shorewall.net/"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
-LICENSE = "GPLv2"
+LICENSE = "GPL-2.0-only"
 SECTION = "network"
 PRIORITY = "optional"
 

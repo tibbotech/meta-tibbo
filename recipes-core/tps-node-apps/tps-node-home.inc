@@ -1,7 +1,7 @@
 DESCRIPTION = "TPS node applications homedir"
 HOMEPAGE = "http://tibbo.com/"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
-LICENSE = "LGPLv3+"
+LICENSE = "GPL-3.0-or-later"
 PACKAGES = "${PN}"
 
 inherit allarch useradd

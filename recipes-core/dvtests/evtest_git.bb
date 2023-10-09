@@ -1,7 +1,7 @@
 DESCRIPTION = "Kernel input event test program"
 HOMEPAGE = "http://freedesktop.org/"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
-LICENSE = "GPLv3+"
+LICENSE = "GPL-3.0-or-later"
 SECTION = "console/utils"
 PACKAGES = "${PN}-dbg ${PN}"
 SRCREV="${AUTOREV}"

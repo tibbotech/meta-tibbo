@@ -3,7 +3,7 @@ PR = "r1"
 
 inherit systemd
 
-LICENSE = "GPLv2"
+LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYRIGHT;md5=ed4b1320404827af6b24b60c0c53656f \
                     file://COPYING;md5=0636e73ff0215e8d672dc4c32c317bb3"
 

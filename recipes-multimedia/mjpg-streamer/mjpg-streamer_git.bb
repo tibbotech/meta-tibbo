@@ -1,6 +1,6 @@
 SUMMARY = "MJPG-streamer takes JPGs from Linux-UVC compatible webcams, filesystem or other input plugins and streams them as M-JPEG via HTTP to webbrowsers, VLC and other software. It is the successor of uvc-streamer, a Linux-UVC streaming application with Pan/Tilt"
 SECTION = "libs/multimedia"
-LICENSE = "GPLv2"
+LICENSE = "GPL-2.0-only"
 
 PV = "1.0+git${SRCPV}"
 SRCREV = "310b29f4a94c46652b20c4b7b6e5cf24e532af39"

@@ -1,7 +1,7 @@
 DESCRIPTION = "TPS UDEV access rules"
 HOMEPAGE = "http://tibbo.com/"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
-LICENSE = "LGPLv2+"
+LICENSE = "GPL-3.0-or-later"
 SECTION = "base"
 
 inherit allarch useradd

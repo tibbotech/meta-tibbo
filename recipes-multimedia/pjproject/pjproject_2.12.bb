@@ -1,6 +1,6 @@
 SRCREV="99660f6addf0072a1e01c3ba630e3701921add9e"
 
-LICENSE = "GPLv2"
+LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 
 X_BR="master"

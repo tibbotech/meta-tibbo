@@ -1,7 +1,7 @@
 DESCRIPTION = "LibMatroska MKV library from Matroska.Org"
 HOMEPAGE = "https://github.com/Matroska-Org/libmatroska"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
-LICENSE = "LGPLv2+"
+LICENSE = "GPL-2.0-or-later"
 SECTION = "libs"
 
 SRCREV = "a72667e36153c418cab3ca1b3dcfd85afb25942f"

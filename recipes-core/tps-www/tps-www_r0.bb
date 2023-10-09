@@ -1,7 +1,7 @@
 DESCRIPTION = "TPS php web interface"
 HOMEPAGE = "http://tibbo.com/"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
-LICENSE = "LGPLv3+"
+LICENSE = "GPL-3.0-or-later"
 
 inherit allarch systemd
 require tps-www-user.inc

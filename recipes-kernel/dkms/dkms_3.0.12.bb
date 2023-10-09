@@ -1,6 +1,6 @@
 SUMMARY = "DKMS Recipe - Adds DKMS tool for target"
 HOMEPAGE = "https://github.com/dell/dkms/"
-LICENSE = "GPLv2"
+LICENSE = "GPL-2.0-only"
 
 inherit autotools
 #inherit autotools-brokensep

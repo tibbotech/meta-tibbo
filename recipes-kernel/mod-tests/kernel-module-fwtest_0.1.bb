@@ -4,7 +4,7 @@ MAINTAINER = "Dvorkin Dmitry <dvorkin@tibbo.com>"
 AUTHOR = "Victor Hugo <victor@vhugo.net>"
 SECTION = "kernel/modules"
 PRIORITY = "optional"
-LICENSE = "GPLv2"
+LICENSE = "GPL-2.0-only"
 PR = "r1"
 
 PACKAGES =+ "${PN}-includes"

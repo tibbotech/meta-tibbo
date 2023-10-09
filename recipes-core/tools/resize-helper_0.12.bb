@@ -1,7 +1,7 @@
 SUMMARY = "Resize image on first boot"
 HOMEPAGE = "https://github.com/96boards/96boards-tools"
 SECTION = "devel"
-LICENSE = "GPLv2+"
+LICENSE = "GPL-3.0-or-later"
 
 SRC_URI  = "file://resize-helper"
 SRC_URI += "file://resize-disk"

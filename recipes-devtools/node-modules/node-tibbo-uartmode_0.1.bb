@@ -1,7 +1,7 @@
 DESCRIPTION = "Node Tibbo UartMode"
 HOMEPAGE = "https://tibbo.com/"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
-LICENSE = "GPLv2"
+LICENSE = "GPL-2.0-only"
 SECTION = "nodejs/module"
 SRCREV="${AUTOREV}"
 

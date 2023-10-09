@@ -1,6 +1,6 @@
 SUMMARY = "Java serial library, patched for low latency."
 DESCRIPTION = "java serial library, patched for low latency."
-LICENSE = "LGPLv2+"
+LICENSE = "LGPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=32303a23463f90b12a7d1dafb8deabf4"
 SECTION = "libs"
 SRC_URI = "git://github.com/neophob/librxtx;protocol=https"

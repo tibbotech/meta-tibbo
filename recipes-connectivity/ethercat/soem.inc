@@ -1,7 +1,7 @@
 DESCRIPTION = "OpenEtherCATsociety / SOEM - Simple Open EtherCAT Master"
 HOMEPAGE = "http://openethercatsociety.github.io/"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
-LICENSE = "GPLv2"
+LICENSE = "GPL-2.0-only"
 SECTION = "libs/network"
 
 inherit cmake

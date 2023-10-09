@@ -1,6 +1,6 @@
 SUMMARY = "CTP-ILL70037V2+GT11 touch firmware files"
 DESCRIPTION = "Firmware (config) for CTP-ILL70037V2+GT11touch (development)."
-LICENSE = "GPLv2+"
+LICENSE = "GPL-2.0-only"
 SRCREV="${AUTOREV}"
 
 SRC_URI  = "file://GT911_Config_20191113_083123_V67.cfg"

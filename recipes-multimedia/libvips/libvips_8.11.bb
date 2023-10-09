@@ -1,7 +1,7 @@
 DESCRIPTION = "A fast image processing library with low memory needs"
 HOMEPAGE = "https://jcupitt.github.io/libvips/"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
-LICENSE = "LGPLv2+"
+LICENSE = "LGPL-2.0-or-later"
 SECTION = "libs"
 SRCREV = "${AUTOREV}"
 

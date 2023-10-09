@@ -1,5 +1,5 @@
 DESCRIPTION = "ncnn is a high-performance neural network inference framework optimized for the mobile platform"
-LICENSE = "GPLv2"
+LICENSE = "BSD-3-Clause"
 SECTION = "libs/multimedia"
 
 INC_PR = "r0"

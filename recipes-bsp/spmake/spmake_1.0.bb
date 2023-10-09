@@ -2,7 +2,7 @@ DESCRIPTION = "Image assembly helper makefile for SP7021 SoCs"
 SUMMARY = "Image scripts"
 HOMEPAGE = "https://tibbo.com/"
 SECTION = "devel"
-LICENSE = "GPLv3+"
+LICENSE = "GPL-3.0-or-later"
 
 SRCREV="${AUTOREV}"
 

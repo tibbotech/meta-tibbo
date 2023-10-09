@@ -1,7 +1,7 @@
 DESCRIPTION = "SystemD interface simple API"
 HOMEPAGE = "http://tibbo.com/"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
-LICENSE = "LGPLv3+"
+LICENSE = "GPL-3.0-or-later"
 SECTION = "libs"
 PACKAGES = "${PN}-dbg ${PN}-dev ${PN}-test ${PN}-node ${PN}"
 SRCREV="${AUTOREV}"

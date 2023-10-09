@@ -1,5 +1,5 @@
 DESCRIPTION = "SIP stack from Belledonne Communications"
-LICENSE = "GPLv2"
+LICENSE = "GPL-2.0-only"
 SECTION = "libs/network"
 
 INC_PR = "r0"

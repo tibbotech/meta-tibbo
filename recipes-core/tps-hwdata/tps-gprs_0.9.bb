@@ -1,7 +1,7 @@
 DESCRIPTION = "TPS pins.ini shared definition"
 HOMEPAGE = "http://tibbo.com/"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
-LICENSE = "LGPLv3+"
+LICENSE = "GPL-3.0-or-later"
 SECTION = "base"
 
 # manual: https://wiki.archlinux.org/index.php/3G_and_GPRS_modems_with_pppd

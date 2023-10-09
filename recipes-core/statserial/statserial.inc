@@ -1,6 +1,6 @@
 SUMMARY = "To snoop on serial line traffic."
 DESCRIPTION = "It can snoop on serial line traffic."
-LICENSE = "LGPLv2+"
+LICENSE = "GPL-2.0-only"
 SECTION = "console/utils"
 
 SRC_URI = "http://www.ibiblio.org/pub/Linux/system/serial/statserial-${PV}.tar.gz"

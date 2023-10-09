@@ -1,7 +1,7 @@
 DESCRIPTION = "PhP SqLite Admin"
 HOMEPAGE = "https://www.phpliteadmin.org"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
-LICENSE = "GPLv3+"
+LICENSE = "GPL-3.0-or-later"
 SECTION = "base"
 PACKAGES = "${PN}"
 

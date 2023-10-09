@@ -1,7 +1,7 @@
 DESCRIPTION = "System profiler and benchmark for Linux systems"
 HOMEPAGE = "https://github.com/lpereira/hardinfo"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
-LICENSE = "GPLv2"
+LICENSE = "GPL-2.0-only"
 SECTION = "console/utils"
 
 SRCREV="2e97dad917a3dda37f1c4b4c49d206affb169deb"

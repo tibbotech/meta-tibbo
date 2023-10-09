@@ -3,7 +3,7 @@ HOMEPAGE = "https://github.com/tibbotech/rtl8xxx-dev"
 MAINTAINER = "Dvorkin Dmitry <dvorkin@tibbo.com>"
 SECTION = "kernel/modules"
 PRIORITY = "optional"
-LICENSE = "GPLv2.0"
+LICENSE = "GPL-2.0-only"
 PR = "r1"
 
 SRCREV="${AUTOREV}"

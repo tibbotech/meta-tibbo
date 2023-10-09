@@ -1,7 +1,7 @@
 DESCRIPTION = "MII diag program"
 HOMEPAGE = "http://anduin.linuxfromscratch.org/BLFS/other/net-tools/mii-diag.c"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
-LICENSE = "GPLv2+"
+LICENSE = "GPL-2.0-only"
 SECTION = "console/utils"
 PACKAGES = "${PN}-dbg ${PN}"
 SRCREV="${AUTOREV}"

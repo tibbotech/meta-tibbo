@@ -1,5 +1,5 @@
 DESCRIPTION = "An LGPL implementation of RTP - RFC3550"
-LICENSE = "LGPLv2.1+"
+LICENSE = "GPL-2.0-or-later"
 
 INC_PR = "r1"
 

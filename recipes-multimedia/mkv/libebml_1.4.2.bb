@@ -1,7 +1,7 @@
 DESCRIPTION = "EBML library for binary XML from Matroska.Org"
 HOMEPAGE = "https://github.com/Matroska-Org/libebml"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
-LICENSE = "LGPLv2+"
+LICENSE = "GPL-2.0-or-later"
 SECTION = "libs"
 
 SRCREV = "6c59e5e1ce0087e4465f6d3f479449d3f6bcb167"
