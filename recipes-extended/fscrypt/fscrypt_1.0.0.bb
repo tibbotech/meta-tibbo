@@ -49,3 +49,5 @@ do_install() {
 }
 
 INSANE_SKIP:${PN} = "already-stripped"
+
+do_compile[network] = "1"
