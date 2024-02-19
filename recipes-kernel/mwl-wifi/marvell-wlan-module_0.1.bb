@@ -7,6 +7,8 @@ LICENSE = "GPL-2.0-only"
 PR = "r1"
 SRCREV="${AUTOREV}"
 
+COMPATIBLE_MACHINE = "(tppg1)"
+
 S = "${WORKDIR}/git/wlan_src"
 
 inherit module

@@ -24,7 +24,6 @@ do_install() {
  chown -R ${NAPPS_U}:${NAPPS_G} ${D}${NAPPS_PFX}
 }
 
-
 FILES:${PN}  = "*"
 
 DEPENDS += "nodejs"

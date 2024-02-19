@@ -8,7 +8,7 @@ inherit npm
 
 NPMPN = "${PN}"
 
-SRC_URI  = "git://github.com/mapbox/node-pre-gyp.git;protocol=https;tag=v${PV}"
+SRC_URI  = "git://github.com/mapbox/node-pre-gyp.git;protocol=https;branch=master;tag=v${PV}"
 
 S = "${WORKDIR}/git"
 

@@ -8,7 +8,7 @@ inherit npm pkgconfig
 
 NPMPN = "${PN}"
 
-SRC_URI  = "git://github.com/peterbraden/node-opencv.git;protocol=https;tag=v${PV}"
+SRC_URI  = "git://github.com/peterbraden/node-opencv.git;protocol=https;branch=master;tag=v${PV}"
 
 S = "${WORKDIR}/git"
 

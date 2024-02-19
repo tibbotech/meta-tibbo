@@ -6,10 +6,9 @@ SECTION = "console/utils"
 
 SRCREV="2e97dad917a3dda37f1c4b4c49d206affb169deb"
 
-inherit autotools
+inherit autotools-brokensep
 
 S = "${WORKDIR}/git/hardinfo2"
-B="${S}"
 
 SRC_URI  = "git://github.com/lpereira/hardinfo.git;protocol=https;branch=master"
 

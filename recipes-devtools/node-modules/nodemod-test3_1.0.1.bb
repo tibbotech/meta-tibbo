@@ -4,7 +4,7 @@ LICENSE = "MIT"
 
 inherit npm
 
-SRC_URI  = "git://github.com/savoirfairelinux/node-server-example.git;protocol=https;tag=${PV}"
+SRC_URI  = "git://github.com/savoirfairelinux/node-server-example.git;protocol=https;branch=master;tag=${PV}"
 
 S = "${WORKDIR}/git"
 

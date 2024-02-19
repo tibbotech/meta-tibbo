@@ -6,7 +6,7 @@ SECTION = "nodejs/module"
 
 inherit npm
 
-SRC_URI  = "git://github.com/lerna/lerna.git;protocol=https;tag=v${PV}"
+SRC_URI  = "git://github.com/lerna/lerna.git;protocol=https;branch=main;tag=v${PV}"
 
 S = "${WORKDIR}/git"
 

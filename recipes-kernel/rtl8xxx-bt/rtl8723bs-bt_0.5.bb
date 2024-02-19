@@ -6,6 +6,8 @@ PRIORITY = "optional"
 LICENSE = "GPL-2.0-only"
 PR = "r1"
 
+COMPATIBLE_MACHINE = "(tppg1)"
+
 SRCREV="${AUTOREV}"
 
 S = "${WORKDIR}/git"

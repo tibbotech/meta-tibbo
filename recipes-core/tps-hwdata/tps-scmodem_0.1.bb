@@ -8,7 +8,7 @@ inherit allarch systemd
 
 S = "${WORKDIR}"
 
-SRC_URI  = "file://sc-reset.sh"
+SRC_URI = "file://sc-reset.sh"
 
 FILES:${PN}  = "/opt/*"
 

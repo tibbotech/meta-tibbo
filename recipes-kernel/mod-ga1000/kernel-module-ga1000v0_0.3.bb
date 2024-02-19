@@ -8,6 +8,8 @@ LICENSE = "GPL-2.0-only"
 PR = "r1"
 SRCREV="${AUTOREV}"
 
+COMPATIBLE_MACHINE = "(tppg1)"
+
 PACKAGES =+ "${PN}-includes"
 PACKAGE_ARCH:${PN}-includes = "all"
 

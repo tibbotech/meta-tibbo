@@ -6,28 +6,25 @@ SECTION = "nodejs/module"
 
 inherit npm systemd useradd
 
-SRC_URI  = "https://github.com/${BPN}/${BPN}/releases/download/${PV}/${BPN}-${PV}.zip;name=pkg"
+SRC_URI  = "npm://registry.npmjs.org/;package=node-red;version=${PV}"
 SRC_URI += "file://${BPN}.service"
-SRC_URI += "npmsw://${THISDIR}/${BPN}/npm-shrinkwrap.json"
+#SRC_URI += "npmsw://${THISDIR}/${BPN}/npm-shrinkwrap.json"
 
 FILES:${PN} += "${bindir}"
 FILES:${PN} += "${systemd_unitdir}"
 FILES:${PN} += "${PN}.service"
 
-S="${WORKDIR}/${PN}"
+S="${WORKDIR}/npm"
 
-NPMPN = "${PN}"
-NPM_LOCKDOWN := "${THISDIR}/${PN}/package-lock.json"
-NPM_SHRINKWRAP := "${THISDIR}/${PN}/npm-shrinkwrap.json"
-
-npm_do_install:prepend() {
-}
+#npm_do_configure:prepend() {
+# npm shrinkwrap
+#}
 npm_do_install:append() {
  # Service
  install -d ${D}${systemd_unitdir}/system/
  install -m 0644 ${WORKDIR}/${PN}.service ${D}${systemd_unitdir}/system/
  # Remove hardware specific files
- rm ${D}${bindir}/${PN}-pi
+ if [ -d "${D}${bindir}/${PN}-pi" ]; then rm ${D}${bindir}/${PN}-pi;  fi;
  rm -rf ${D}${NPM_INSTALLDIR}/bin
  rm -rf ${D}${NPM_INSTALLDIR}/node_modules/@${PN}/nodes/core/hardware
  rm -rf ${D}${NPM_INSTALLDIR}/node_modules/@${PN}/node_modules/bcrypt/build-tmp-napi-v3/Release/nothing.a

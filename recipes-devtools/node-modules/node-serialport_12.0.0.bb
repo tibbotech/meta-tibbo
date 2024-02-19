@@ -1,14 +1,12 @@
-DESCRIPTION = "Node BufferUtil"
-HOMEPAGE = "https://www.npmjs.com/package/bufferutil"
+DESCRIPTION = "Node SerialPort"
+HOMEPAGE = "https://www.npmjs.com/package/serialport"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
 LICENSE = "MIT"
 SECTION = "nodejs/module"
 
 inherit npm
 
-NPMPN = "${PN}"
-
-SRC_URI  = "git://github.com/websockets/bufferutil.git;protocol=https;tag=v${PV}"
+SRC_URI  = "git://github.com/serialport/node-serialport.git;protocol=https;branch=main;tag=v${PV}"
 
 S = "${WORKDIR}/git"
 

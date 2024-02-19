@@ -8,7 +8,7 @@ inherit autotools cmake
 
 S = "${WORKDIR}/git"
 
-SRC_URI  = "git://github.com/davisking/dlib.git;protocol=https;tag=v${PV}"
+SRC_URI  = "git://github.com/davisking/dlib.git;protocol=https;branch=master;tag=v${PV}"
 
 #FILES:${PN}  = "/usr/lib/*"
 #FILES:${PN} += "/usr/*"

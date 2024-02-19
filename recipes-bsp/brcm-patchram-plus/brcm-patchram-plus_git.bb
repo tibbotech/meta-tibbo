@@ -8,10 +8,9 @@ SRC_URI  = "git://chromium.googlesource.com/chromiumos/third_party/broadcom/;pro
 SRC_URI += "file://brcm-patchram-plus@.service"
 SRC_URI += "file://bt-reset.sh"
 
-inherit autotools
+inherit autotools-brokensep
 
 S="${WORKDIR}/git/bluetooth"
-B="${S}"
 D="${WORKDIR}/image/"
 
 do_install:append() {

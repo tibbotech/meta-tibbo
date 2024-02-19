@@ -9,7 +9,7 @@ inherit npm
 
 NPMPN = "${PN}"
 
-SRC_URI = "git://github.com/tibbotech/ltps-node-uart-mode.git;branch=master;protocol=https"
+SRC_URI = "git://github.com/tibbotech/ltps-node-uart-mode.git;protocol=https;branch=master"
 
 S = "${WORKDIR}/${PN}"
 

@@ -7,6 +7,8 @@ PRIORITY = "optional"
 LICENSE = "GPL-2.0-only"
 SRCREV="${AUTOREV}"
 
+COMPATIBLE_MACHINE = "(tppg1|tppg2)"
+
 PACKAGES =+ "${PN}-includes"
 PACKAGE_ARCH:${PN}-includes = "all"
 

@@ -9,7 +9,6 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 RDEPENDS:${PN}  = "bash"
 RDEPENDS:${PN} += "curl"
 RDEPENDS:${PN}-dev  = "bash"
-#RDEPENDS:${PN}-dev += "python2.7-core"
 
 GO_IMPORT = "github.com/influxdata/influxdb"
 

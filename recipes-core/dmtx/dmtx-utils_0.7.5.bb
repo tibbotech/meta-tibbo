@@ -11,6 +11,6 @@ inherit autotools pkgconfig
 
 SRCREV = "36d8f62ca9e5847dbe69da4fffbeadf65d200579"
 
-SRC_URI = "git://libdmtx.git.sourceforge.net/gitroot/libdmtx/dmtx-utils"
+SRC_URI = "git://libdmtx.git.sourceforge.net/gitroot/libdmtx/dmtx-utils;branch=master"
 
 S = "${WORKDIR}/git"

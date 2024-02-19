@@ -3,7 +3,7 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/${BPN}:"
 CONFFILES:${PN} += " ${sysconfdir}/systemd/network/eth0.network"
 
 SRC_URI += "file://eth0.network"
-SRC_URI += "file://eth1.network"
+SRC_URI:append:tppg2 = " file://eth1.network"
 SRC_URI += "file://nsswitch.conf"
 
 do_install:append:tppg1() {

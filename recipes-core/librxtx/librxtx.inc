@@ -1,9 +1,9 @@
 SUMMARY = "Java serial library, patched for low latency."
 DESCRIPTION = "java serial library, patched for low latency."
-LICENSE = "LGPL-2.0-only"
+LICENSE = "LGPL-2.1-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=32303a23463f90b12a7d1dafb8deabf4"
 SECTION = "libs"
-SRC_URI = "git://github.com/neophob/librxtx;protocol=https"
+SRC_URI = "git://github.com/neophob/librxtx;protocol=https;branch=master"
 
 # the same as 'inherit autotools', but with B=$S
 inherit autotools-brokensep

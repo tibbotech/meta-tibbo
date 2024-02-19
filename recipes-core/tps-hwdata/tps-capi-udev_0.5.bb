@@ -3,13 +3,13 @@ HOMEPAGE = "http://tibbo.com/"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
 LICENSE = "GPL-3.0-or-later"
 SECTION = "base"
+COMPATIBLE_MACHINE = "(tppg1|tppg2)"
 
 inherit allarch useradd
 
 S = "${WORKDIR}/${PN}"
 
-SRC_URI:tppg1  = "file://capi-devs.rules"
-SRC_URI:tppg2  = "file://capi-devs.rules"
+SRC_URI = "file://capi-devs.rules"
 
 FILES:${PN} += "/etc/*"
 

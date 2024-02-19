@@ -18,7 +18,6 @@ FILES:${PN}-node  += "/usr/lib/node_modules/"
 FILES:${PN}-test  = "/home/root/*"
 FILES:${PN}  += "/usr/lib/*.so*"
 
-
 do_configure() {
  ${STAGING_DIR_NATIVE}/usr/bin/swig --version
 # swig -javascript -node -c++ SysDs.i

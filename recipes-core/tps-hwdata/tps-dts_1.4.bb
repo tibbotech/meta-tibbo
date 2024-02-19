@@ -3,19 +3,16 @@ HOMEPAGE = "http://tibbo.com/"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
 LICENSE = "GPL-3.0-or-later"
 SECTION = "base"
+COMPATIBLE_MACHINE = "(tppg1|tppg2)"
 
 inherit kernel-arch
 
 S = "${WORKDIR}"
 
-SRC_URI:tppg1  = "file://conv.sh"
-SRC_URI:tppg2  = "file://conv.sh"
-SRC_URI:tppg1 += "file://ovl.sh"
-SRC_URI:tppg2 += "file://ovl.sh"
-SRC_URI:tppg1 += "file://part_save"
-SRC_URI:tppg2 += "file://part_save"
-SRC_URI:tppg1 += "file://template.dtt"
-SRC_URI:tppg2 += "file://template.dtt"
+SRC_URI  = "file://conv.sh"
+SRC_URI += "file://ovl.sh"
+SRC_URI += "file://part_save"
+SRC_URI += "file://template.dtt"
 
 FILES:${PN}  = "/opt/${PN}/*"
 FILES:${PN} += "/opt/tps-shared/*"

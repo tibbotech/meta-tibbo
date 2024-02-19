@@ -6,7 +6,7 @@ SECTION = "nodejs/module"
 
 inherit npm
 
-SRC_URI  = "git://github.com/yaacov/node-modbus-serial.git;protocol=https;tag=v${PV}"
+SRC_URI  = "git://github.com/yaacov/node-modbus-serial.git;protocol=https;branch=master;tag=v${PV}"
 
 S = "${WORKDIR}/git"
 

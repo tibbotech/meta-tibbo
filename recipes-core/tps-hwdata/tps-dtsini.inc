@@ -4,13 +4,13 @@ MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
 LICENSE = "GPL-3.0-or-later"
 SECTION = "base"
 PACKAGES = "${PN}"
+COMPATIBLE_MACHINE = "(tppg1|tppg2)"
 
 inherit allarch
 
 S = "${WORKDIR}/${PN}"
 
-SRC_URI:tppg1  = "file://current.ini"
-SRC_URI:tppg2  = "file://current.ini"
+SRC_URI = "file://current.ini"
 
 FILES:${PN}  = "/opt/tps-shared/*"
 

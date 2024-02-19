@@ -123,7 +123,7 @@ DEPENDS += "fuse-exfat exfat-utils"
 
 #DEPENDS += "apt"
 
-DEPENDS += "dstat"
+# DEPENDS += "dstat"
 DEPENDS += "nmap"
 DEPENDS += "zabbix"
 DEPENDS += "grafana"
@@ -155,7 +155,7 @@ DEPENDS += "${@bb.utils.contains("DISTRO_FEATURES", "openamp", "rpmsg-echo-test 
 DEPENDS += "soem"
 #DEPENDS += "soes"
 # iec-...
-DEPENDS += "forte"
+# DEPENDS += "forte"
 
 # tmp
 #DEPENDS += "linux-firmware"

@@ -4,13 +4,11 @@ MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
 LICENSE = "GPL-2.0-or-later"
 SECTION = "libs"
 
-SRCREV = "a72667e36153c418cab3ca1b3dcfd85afb25942f"
-
 inherit autotools pkgconfig
 
 S = "${WORKDIR}/git"
 
-SRC_URI  = "git://github.com/Matroska-Org/libmatroska.git;protocol=https;tag=release-${PV}"
+SRC_URI  = "git://github.com/Matroska-Org/libmatroska.git;protocol=https;branch=master;tag=release-${PV}"
 
 DEPENDS += "libebml"
 

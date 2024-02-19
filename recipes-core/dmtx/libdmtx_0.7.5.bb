@@ -8,6 +8,6 @@ inherit autotools
 
 SRCREV = "a3e539a3e1c1076c7b96ad306f0883f9b363eb60"
 
-SRC_URI = "git://libdmtx.git.sourceforge.net/gitroot/libdmtx/libdmtx"
+SRC_URI = "git://libdmtx.git.sourceforge.net/gitroot/libdmtx/libdmtx;branch=master"
 
 S = "${WORKDIR}/git"
