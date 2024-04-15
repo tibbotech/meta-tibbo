@@ -35,7 +35,6 @@ IMAGE_INSTALL += "kernel-module-rtc-ds3232 kernel-module-mcp4531"
 
 # test
 IMAGE_INSTALL += "keyutils"
-IMAGE_INSTALL += "fscrypt"
 
 IMAGE_INSTALL:append:tppg1 = " kernel-module-ga1000v0"
 IMAGE_INSTALL:append:tppg2 = " sp7021-test-ipc"

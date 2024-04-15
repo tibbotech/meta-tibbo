@@ -1,0 +1,11 @@
+--- meta/classes/npm.bbclass	2024-04-14 03:28:48.453525830 +0300
++++ meta/classes/npm.bbclass	2024-04-14 03:29:34.621975062 +0300
+@@ -329,7 +329,7 @@
+ 
+     # node(1) is using /usr/lib/node as default include directory and npm(1) is
+     # using /usr/lib/node_modules as install directory. Let's make both happy.
+-    ln -fs node_modules ${D}/${nonarch_libdir}/node
++    #ln -fs node_modules ${D}/${nonarch_libdir}/node
+ }
+ 
+ FILES:${PN} += " \

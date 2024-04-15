@@ -31,6 +31,10 @@ https://github.com/OpenAMP/meta-openamp
 
 Tibbo SoCs support images and apps
 
+## Notes
+
+Compatibility: Dunfell, Kirstone, Nanbield
+
 ## Quick Start
 
 TBD
