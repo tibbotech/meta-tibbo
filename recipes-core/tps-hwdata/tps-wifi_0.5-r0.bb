@@ -8,22 +8,22 @@ inherit allarch systemd
 
 S = "${WORKDIR}"
 
-SRC_URI  = "file://systemd/network/wlan0.network"
+SRC_URI  = "file://wlan0.network"
 SRC_URI += "file://wpa_supplicant/wlan0.conf.orig"
 SRC_URI += "file://wpa_supplicant/wlan0.conf"
-SRC_URI += "file://lib/systemd/system/tps-wpa@.service"
+SRC_URI += "file://tps-wpa@.service"
 
 FILES:${PN}  = "/etc/*"
-FILES:${PN} += "/lib/*"
+FILES:${PN} += "${systemd_system_unitdir}/*"
 
 do_install() {
   install -d ${D}/etc/wpa_supplicant/
   install -m 0644 ${S}/wpa_supplicant/* ${D}/etc/wpa_supplicant/
   install -d ${D}/etc/wpa_supplicant/certs/
   install -d ${D}/etc/systemd/network/
-  install -m 0644 ${S}/systemd/network/* ${D}/etc/systemd/network/
-  install -d ${D}/lib/systemd/system/
-  install -m 0644 ${S}/lib/systemd/system/* ${D}/lib/systemd/system/
+  install -m 0644 ${S}/wlan0.network ${D}/etc/systemd/network/
+  install -d ${D}${systemd_system_unitdir}/
+  install -m 0644 ${S}/tps-wpa@.service ${D}${systemd_system_unitdir}/
 }
 
 RDEPENDS:${PN}:tppg1 += "kern-mod-ga1000v0"

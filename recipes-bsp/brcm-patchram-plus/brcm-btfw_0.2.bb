@@ -13,9 +13,9 @@ S = "${WORKDIR}/git"
 inherit allarch
 
 do_install() {
- install -d ${D}/lib/firmware/brcm/
- install -m 644 ${WORKDIR}/BCM4345C0_003.001.025.0165.0310.hcd ${D}/lib/firmware/brcm/
- install -m 644 ${WORKDIR}/BCM4345C5_003.006.006.0058.0135.hcd ${D}/lib/firmware/brcm/
+ install -d ${D}${nonarch_base_libdir}/firmware/brcm/
+ install -m 644 ${WORKDIR}/BCM4345C0_003.001.025.0165.0310.hcd ${D}${nonarch_base_libdir}/firmware/brcm/
+ install -m 644 ${WORKDIR}/BCM4345C5_003.006.006.0058.0135.hcd ${D}${nonarch_base_libdir}/firmware/brcm/
 }
 
 FILES:${PN} += "${nonarch_base_libdir}/firmware/brcm/*"

@@ -11,11 +11,11 @@ S = "${WORKDIR}"
 SRC_URI = "file://${PN}/sd8787_uapsta.bin"
 
 do_install() {
- install -m 0755 -d ${D}${base_libdir}/firmware
- install -m 0644 ${S}/sd8787_uapsta.bin ${D}${base_libdir}/firmware/
+ install -m 0755 -d ${D}${nonarch_base_libdir}/firmware
+ install -m 0644 ${S}/sd8787_uapsta.bin ${D}${nonarch_base_libdir}/firmware/
 }
 
-FILES:${PN} += "/lib/firmware/sd8787_uapsta.bin"
+FILES:${PN} += "${nonarch_base_libdir}/firmware/sd8787_uapsta.bin"
 
 # add this (but not used?)
 #RDEPENDS:${PN} += "linux-firmware-sd8787"

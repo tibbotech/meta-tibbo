@@ -16,12 +16,12 @@ SRC_URI  = "file://rtl8821c_config"
 SRC_URI += "file://rtl8821c_fw"
 
 do_install() {
- install -d ${D}/lib/firmware/rtl_bt2
- install -m 0644 ${WORKDIR}/rtl*_config ${D}/lib/firmware/rtl_bt2/
- install -m 0644 ${WORKDIR}/rtl*_fw ${D}/lib/firmware/rtl_bt2/
+ install -d ${D}${nonarch_base_libdir}/firmware/rtl_bt2
+ install -m 0644 ${WORKDIR}/rtl*_config ${D}${nonarch_base_libdir}/firmware/rtl_bt2/
+ install -m 0644 ${WORKDIR}/rtl*_fw ${D}${nonarch_base_libdir}/firmware/rtl_bt2/
 }
 
-FILES:${PN} += "/lib"
+FILES:${PN} += "${nonarch_base_libdir}/*"
 
 RDEPENDS:${PN} += "bash"
 

@@ -15,7 +15,7 @@ SRC_URI += "file://${BPN}/opt/tps-shared/gprs-tpl/usb3g.template"
 SRC_URI += "file://${BPN}/opt/tps-shared/gprs-tpl/pppoe.template"
 SRC_URI += "file://${BPN}/opt/tps-shared/gprs-tpl/pppoe@.service"
 SRC_URI += "file://${BPN}/opt/tps-shared/gprs-tpl/gprs.template"
-SRC_URI += "file://${BPN}/lib/systemd/system/gprs3g@.service"
+SRC_URI += "file://${BPN}/gprs3g@.service"
 SRC_URI += "file://${BPN}/etc/chatscripts/gprs_ready.chat"
 SRC_URI += "file://${BPN}/etc/chatscripts/115200.chat"
 SRC_URI += "file://${BPN}/etc/chatscripts/ttyO3.chat"
@@ -29,6 +29,11 @@ SRC_URI += "file://${BPN}/etc/systemd/system/gprs3g@.service.d/50-forever.conf"
 SRC_URI += "file://${BPN}/etc/systemd/system/ppp@.service.d/50-forever.conf"
 
 FILES:${PN} = "*"
+
+do_install:append() {
+ install -d ${D}${systemd_system_unitdir}/
+ install -m 0644 ${WORKDIR}/gprs3g@.service ${D}${systemd_system_unitdir}/
+}
 
 RDEPENDS:${PN} += "ppp"
 RDEPENDS:${PN} += "tps-bash"

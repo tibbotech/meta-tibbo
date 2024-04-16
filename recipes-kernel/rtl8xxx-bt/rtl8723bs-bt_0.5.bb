@@ -21,12 +21,12 @@ SRC_URI += "file://rtl8723bs-bt-ttyO5.rules"
 SRC_URI += "file://bt_rtk_hciattach@.service"
 
 do_install() {
- install -d ${D}/lib/firmware/rtl_bt
- install rtlbt_fw_new ${D}/lib/firmware/rtl_bt/rtlbt_fw
- install ${WORKDIR}/rtlbt_config ${D}/lib/firmware/rtl_bt/
+ install -d ${D}${nonarch_base_libdir}/firmware/rtl_bt
+ install rtlbt_fw_new ${D}${nonarch_base_libdir}/firmware/rtl_bt/rtlbt_fw
+ install ${WORKDIR}/rtlbt_config ${D}${nonarch_base_libdir}/firmware/rtl_bt/
 
- install -d ${D}/lib/systemd/system
- install -m 0644 ${WORKDIR}/bt_rtk_hciattach@.service ${D}/lib/systemd/system/
+ install -d ${D}${systemd_system_unitdir}
+ install -m 0644 ${WORKDIR}/bt_rtk_hciattach@.service ${D}${systemd_system_unitdir}/
 
 # install -d ${D}/home/root/
 # install -m 0755 start_bt.sh ${D}/home/root/
@@ -40,7 +40,8 @@ do_install() {
 }
 
 FILES:${PN} += "/etc"
-FILES:${PN} += "/lib"
+FILES:${PN} += "${systemd_system_unitdir}/*"
+FILES:${PN} += "${nonarch_base_libdir}/firmware/rtl_bt/*"
 FILES:${PN} += "/usr"
 
 RDEPENDS:${PN} += "bash"

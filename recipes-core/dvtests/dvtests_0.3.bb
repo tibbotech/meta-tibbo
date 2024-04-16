@@ -11,13 +11,13 @@ S = "${WORKDIR}/git"
 SRC_URI = "git://github.com/tibbotech/ltps-dvtests.git;protocol=https;branch=master"
 
 FILES:${PN}  = "/home/root/${PN}/*"
-FILES:${PN} += "/lib/systemd/system/set485@.service"
+FILES:${PN} += "${systemd_system_unitdir}/set485@.service"
 FILES:${PN}-dbg  = "/home/root/${PN}/.debug/*"
 
 do_install() {
  oe_runmake PREFIX=${D} install
- install -d ${D}/lib/systemd/system/
- install ${S}/set485@.service ${D}/lib/systemd/system/
+ install -d ${D}${systemd_system_unitdir}/
+ install ${S}/set485@.service ${D}${systemd_system_unitdir}/
 }
 
 RDEPENDS:${PN} += "libstdc++"

@@ -15,11 +15,11 @@ inherit allarch
 SRC_URI = "git://github.com/tibbotech/ga1000-linux-fw.git;protocol=https;branch=master"
 
 do_install() {
- install -d ${D}/lib/firmware/libertas
- install -m 0644 ${S}/*.bin ${D}/lib/firmware/libertas/
+ install -d ${D}${nonarch_base_libdir}/firmware/libertas
+ install -m 0644 ${S}/*.bin ${D}${nonarch_base_libdir}/firmware/libertas/
 }
 
-FILES:${PN} += "/lib"
+FILES:${PN} += "${nonarch_base_libdir}/*"
 
 RDEPENDS:${PN} += "bash"
 

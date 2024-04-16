@@ -19,8 +19,8 @@ SRC_URI += "file://rtl8xxx-bt-ttyO5.rules"
 SRC_URI += "file://rtk_hciattach@.service"
 
 do_install() {
- install -d ${D}/lib/systemd/system
- install -m 0644 ${WORKDIR}/rtk_hciattach@.service ${D}/lib/systemd/system/
+ install -d ${D}/${systemd_system_unitdir}
+ install -m 0644 ${WORKDIR}/rtk_hciattach@.service ${D}${systemd_system_unitdir}/
 
  install -d ${D}/usr/bin/
  install -m 0755 rtk_hciattach ${D}/usr/bin/
@@ -30,7 +30,7 @@ do_install() {
 }
 
 FILES:${PN} += "/etc"
-FILES:${PN} += "/lib"
+FILES:${PN} += "${systemd_system_unitdir}/*"
 FILES:${PN} += "/usr"
 
 RDEPENDS:${PN} += "bash"
