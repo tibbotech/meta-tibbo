@@ -23,3 +23,6 @@ PACKAGE_INSTALL = "initramfs-framework-base \
 
 # > Dunfell
 # PACKAGE_INSTALL += "initramfs-module-overlayroot"
+
+# required for Nanbield
+IMAGE_NAME_SUFFIX=""
