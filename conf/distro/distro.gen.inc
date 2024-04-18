@@ -74,3 +74,6 @@ PACKAGE_FEED_URIS += "http://tibbo.com/downloads/LTPS/repo/${MACHINE}"
 #PACKAGE_FEED_GPG_PASSPHRASE_FILE = "file://${COREBASE}/x"
 
 # there may also be PREFFERED_VERSION_xxx = .. placed
+
+INHERIT:remove = "create-spdx"
+# SPDX_PRETTY="1"
