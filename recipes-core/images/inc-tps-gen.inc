@@ -43,3 +43,9 @@ IMAGE_INSTALL:append:tppg2 = " kernel-module-dvirqtst"
 inherit core-image
 
 # also remove EXTRA_IMAGE_FEATURES = "debug-tweaks" from x.tpp/conf/local.conf
+
+inherit image-buildinfo
+IMAGE_BUILDINFO_VARS:append = " DATETIME DISTRO_NAME IMAGE_BASENAME" 
+IMAGE_BUILDINFO_VARS:append = " MACHINE_FEATURES DISTRO_FEATURES IMAGE_FEATURES"
+IMAGE_BUILDINFO_VARS:append = " MACHINE TUNE_PKGARCH TUNE_FEATURES TARGET_FPU"
+IMAGE_BUILDINFO_FILE = "${sysconfdir}/buildinfo"
