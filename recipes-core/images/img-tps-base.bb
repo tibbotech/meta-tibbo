@@ -17,6 +17,7 @@ IMAGE_INSTALL  += "openssh-sftp-server"
 #IMAGE_INSTALL += "systemd-analyze"
 IMAGE_FEATURES += "package-management"
 
+IMAGE_INSTALL += "rsync"
 
 IMAGE_INSTALL += "gdbserver"
 IMAGE_INSTALL += "tcf-agent"

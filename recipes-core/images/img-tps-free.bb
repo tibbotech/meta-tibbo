@@ -12,6 +12,7 @@ IMAGE_FEATURES += "ssh-server-openssh"
 IMAGE_INSTALL  += "openssh-sftp-server"
 IMAGE_FEATURES += "package-management"
 
+IMAGE_INSTALL += "rsync"
 
 IMAGE_INSTALL += "gdbserver"
 IMAGE_INSTALL += "tcf-agent"
