@@ -58,5 +58,7 @@ KERNEL_FEATURES:append = " custom/netfilter/addrtype.scc"
 KERNEL_FEATURES:append = " cfg/wifi/tppg2_brcmI.scc"
 KERNEL_FEATURES:append = " tibbits/all.scc"
 KERNEL_FEATURES:append = " features/wireguard/wireguard.scc"
+KERNEL_FEATURES:append = " custom/tpm.scc"
+KERNEL_FEATURES:append = " custom/dm-crypt.scc"
 
 KERNEL_DEVICETREE:append:tppg2 = " sp7021-ltpp3g2-empty.dtb"
