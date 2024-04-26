@@ -1,0 +1,54 @@
+#!/bin/sh
+
+luks_enabled() {
+ return 0
+}
+
+try_to_mount_rootfs() {
+ local mount_flags="rw,noatime,iversion"
+
+ if [ ! -x /init.cryptfs ]; then  return 1;  fi;
+ echo "/init.cryptfs $ROOTFS_DIR $bootparam_root $mount_flags"
+ /init.cryptfs "$ROOTFS_DIR" "$bootparam_root" "$mount_flags" && return 0
+ return 1
+}
+
+
+luks_run() {
+ i=0
+ while [ $i -le 1 ]; do
+    try_to_mount_rootfs && break
+    return 0
+#    sleep 0.1
+    $((++i))
+ done
+
+ # Move the mount points of some filesystems over to
+ # the corresponding directories under the real root filesystem.
+ for dir in `cat /proc/mounts | grep -v rootfs | awk '{ print $2 }'` ; do
+   mkdir -p "$ROOTFS_DIR"/${dir##*/}
+   mount -nv --move "$dir" "$ROOTFS_DIR"/${dir##*/}
+ done
+
+ cd "$ROOTFS_DIR"
+
+ # !!! The Big Fat Warnings !!!
+ #
+ # The IMA policy may enforce appraising the executable and verifying the
+ # signature stored in xattr. However, ramfs doesn't support xattr, and all
+ # other initializations must *NOT* be placed after IMA initialization!
+ [ -x /init.ima ] && /init.ima "$ROOTFS_DIR" && {
+    # switch_root is an exception. We call it in the real rootfs and it
+    # should be already signed properly.
+    switch_root="usr/sbin/switch_root.static"
+ } || {
+    switch_root="switch_root"
+ }
+
+ exec "$switch_root" "$ROOTFS_DIR" "$INIT" || {
+    "$ROOTFS_DIR/bin/echo.coreutils" "Couldn't switch to the real rootfs"
+    # Cause kernel panic.
+    exit 2
+ }
+
+}

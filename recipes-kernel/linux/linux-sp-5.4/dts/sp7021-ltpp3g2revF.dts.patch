@@ -1,0 +1,25 @@
+--- /dev/null	2024-02-17 23:53:10.777725761 +0300
++++ a/arch/arm/boot/dts/sp7021-ltpp3g2revF.dts	2024-02-21 16:23:20.992455757 +0300
+@@ -0,0 +1,22 @@
++/*
++ * LTPP3G2 Rev F board (TPM is enabled)
++ * Copyright (C) 2020 Tibbo Tech. - http://tibbo.com/tps/
++ * License: GPLv2 or later
++ */
++/dts-v1/;
++
++#include "sp7021-ltpp3g2revD.dtsi"
++
++/ {
++	model = "SP7021 LTPP3G2 Rev. F (empty+wifi)";
++};
++
++&sdio {  status = "okay";  };
++
++&i2c_tps {
++ st33htpi: st33htpi@0{
++	compatible = "st,st33htpm-i2c";
++	reg = <0x2e>;
++	status = "okay";
++ };
++};

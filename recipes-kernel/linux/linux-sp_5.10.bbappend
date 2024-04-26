@@ -5,6 +5,7 @@ COMPATIBLE_MACHINE:append = "|tppg2"
 SRC_URI:append = " file://kmeta-tppg2;type=kmeta;name=kmeta-tppg2;destsuffix=kmeta-tppg2"
 
 # additional DTSes
+SRC_URI += "file://dts/sp7021-ltpp3g2revF.dts.patch"
 SRC_URI += "file://dts/sp7021-ttt.dts.patch"
 SRC_URI += "file://dts/sp7021-ltpp3g2-empty.dts.patch"
 SRC_URI += "file://dts/sp7021-dsx.dts.patch"
