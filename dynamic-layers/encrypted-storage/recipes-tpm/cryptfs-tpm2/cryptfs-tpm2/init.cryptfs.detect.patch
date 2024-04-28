@@ -1,0 +1,11 @@
+--- a/scripts/init.cryptfs	2024-04-28 03:14:07.821917756 +0300
++++ a/scripts/init.cryptfs	2024-04-28 03:16:06.105547238 +0300
+@@ -217,6 +217,8 @@
+     local tpm_absent=1
+     local name=""
+     for name in $tpm_devices; do
++tpm_absent=0
++break;
+         grep -q "TCG version: 1.2" "/sys/class/tpm/$name/device/caps" 2>/dev/null &&
+             print_info "TPM 1.2 device $name is not supported." && break
+ 

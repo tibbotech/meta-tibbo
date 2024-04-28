@@ -45,7 +45,7 @@ luks_run() {
     switch_root="switch_root"
  }
 
- exec "$switch_root" "$ROOTFS_DIR" "$INIT" || {
+ exec "$switch_root" -c /dev/console $ROOTFS_DIR ${bootparam_init:-/sbin/init} || {
     "$ROOTFS_DIR/bin/echo.coreutils" "Couldn't switch to the real rootfs"
     # Cause kernel panic.
     exit 2

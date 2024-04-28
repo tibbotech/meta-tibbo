@@ -1,0 +1,11 @@
+--- a/scripts/luks-setup.sh
++++ a/scripts/luks-setup.sh
+@@ -95,6 +95,8 @@
+     local tpm_absent=1
+     local dev=""
+     for dev in $tpm_devices; do
++tpm_absent=0
++break;
+         grep -q "TCG version: 1.2" "/sys/class/tpm/$dev/device/caps" 2>/dev/null &&
+             print_warning "TPM 1.2 device is not supported" && break
+ 

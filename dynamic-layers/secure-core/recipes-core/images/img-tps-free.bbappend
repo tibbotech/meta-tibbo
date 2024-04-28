@@ -4,3 +4,4 @@ IMAGE_INSTALL += "${@bb.utils.contains("DISTRO_FEATURES", "luks", "packagegroup-
 IMAGE_INSTALL += "${@bb.utils.contains("DISTRO_FEATURES", "ids", "packagegroup-ids", "", d)}"
 
 IMAGE_INSTALL += "rsync"
+IMAGE_INSTALL += "e2fsprogs"
