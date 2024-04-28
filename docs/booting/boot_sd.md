@@ -1,17 +1,20 @@
 Booting from SD card directly
 -----------------------------
 
-1. After the Yocto build go to <builddir>/images/tppg2/ directory and find 
-<myimagename>.wic
-files there.
+1. In the &lt;builddir&gt;/images/tppg2/ directory find **&lt;myimagename&gt;.wic** file.
 
-2. Write your WIC file to SD card.
-- for Linux:
+2. Write the WIC file as the image for SD card.
+<details>
+<summary>in Linux</summary>
 ```
-dd if=./myimage.wic of=/dev/sd<X> bs=1M
+dd if=./myimage.wic of=/dev/sd<X> bs=1M && sync
 ```
-- for Windows please use any of 
+</details>
+<details>
+<summary>in Windows</summary>
+Please use any of 
 [the following tools](https://www.makeuseof.com/tag/10-tools-make-bootable-usb-iso-file/)
+</details>
 
 3. Insert your SD card back to the PC, open its first (FAT) partition
 (say, /run/media/`whoami`/boot) and
