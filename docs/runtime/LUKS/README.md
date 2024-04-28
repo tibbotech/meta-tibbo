@@ -54,7 +54,9 @@ rsync -axHAWXS --numeric-ids --info=progress2 / /mnt/
 ```
 
 4. Reboot, delete the #9 partition and resize #8:
+
 4.1 Reset the board
+
 4.2 Login to the OS and run:
 ```
 parted /dev/mmcblk0 rm 9
