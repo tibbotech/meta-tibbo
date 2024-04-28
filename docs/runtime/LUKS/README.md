@@ -17,7 +17,7 @@ LUKS should be setup at the runtime.
 The simplest way to run LTPP3G2 rootfs on LUKS is to:
 
 1. add one more copy of the rootfs partition (#9);
-2. boot from #9 (the copy of the rootfs at #8 partition);
+2. boot from #9;
 3. convert #8 into LUKS and copy the rootfs contents from #9 to #8;
 4. boot from #8, delete #9 and expand #8
 
@@ -62,33 +62,37 @@ parted /dev/mmcblk0 resizepart 8 100%
 cryptsetup resize /dev/mapper/cryptfs_tpm2
 resize2fs /dev/mapper/cryptfs_tpm2
 ```
-### Notes
-
-[^1]: If you have TPM, but TPM is locked down or access is not possible,
-you can reset the TPM by running:
+### Useful TPM commands
+To reset the TPM (keys will be lost):
 ```
 cd /sys/class/gpio/; echo 91 > ./export
 echo 1 > ./P11_03/value && sleep 1 && echo 0 > ./P11_03/value
 ```
-and repeate the step. Note, if you'll reset the TPM, keys will be lost.
 
-[^2]: Mounting the rootfs without TPM requires to enter the password on every 
-boot. Alternatively you may store the password in another location 
-(say file on another partition or in OTP) and force your INITRD to use it, but 
-it is out of the scope of this simple manual.
-
-### Useful TPM commands
 To set the access passwords:
 ```
 tpm2_changeauth -c owner 123
 tpm2_changeauth -c endorsement 456
 tpm2_changeauth -c lockout 789
 ```
+
 To see the list of the TPM keys:
 ```
 tpm2_pcrread
 ```
+
 To see the LUKS partition information:
 ```
 cryptsetup luksDump /dev/mmcblk0p8
 ```
+
+### Notes
+
+[^1]: If you have TPM, but TPM is locked down or access is not possible,
+you can reset the TPM and repeate the step. Note, if you'll reset the TPM, 
+keys will be lost.
+
+[^2]: Mounting the rootfs without TPM requires to enter the password on every 
+boot. Alternatively you may store the password in another location 
+(say file on another partition or in OTP) and force your INITRD to use it, but 
+it is out of the scope of this simple manual.

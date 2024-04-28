@@ -19,4 +19,4 @@ embedded devices.
 
 ## LUKS
 
-Running [LUKS](LUKS)
+Running [LUKS](LUKS) (Linux Unified Key Setup)

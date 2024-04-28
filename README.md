@@ -23,6 +23,13 @@ https://github.com/meta-qt5/meta-qt5
 https://github.com/OpenAMP/meta-openamp
     openamp-layer
 
+Optional (TPM and LUKS support):
+
+https://github.com/Wind-River/meta-secure-core.git
+    secure-core (/meta)
+    tpm2 (/meta-tpm2)
+    encrypted-storage (/meta-encrypted-storage)
+
 ## Quick links
 
 * Git repo: https://github.com/tibbotech/yocto_layers
