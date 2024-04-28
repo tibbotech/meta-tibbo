@@ -16,3 +16,7 @@ embedded devices.
 ## Encrypting FS
 
 [Encrypt](encrypt) filesystem
+
+## LUKS
+
+Running [LUKS](LUKS)
