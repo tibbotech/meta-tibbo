@@ -35,7 +35,7 @@ Boot into Linux from the partition #9, authenticate and check if you have TPM su
 dmesg | grep -i TPM
 ```
 
-2. Setup the LUKS for #8 partition [^1]:
+2. Setup the LUKS for #8 partition [^1][^3]:
 ```
 luks-setup.sh -V -d /dev/mmcblk0p8 -n newroot -e
 ```
@@ -45,6 +45,8 @@ cryptsetup --type luks --cipher aes-xts-plain --hash sha256 --use-random luksFor
 cryptsetup luksOpen /dev/mmcblk0p8 newroot
 ```
 if you have not [^2].
+
+![Automatic LUKS setup with TPM](https://github.com/tibbotech/meta-tibbo/assets/1921587/766add4d-a38a-43f5-80fb-f5ba7dc9fcc7)
 
 3. Format the 'newroot' partition (#8) into EXT4 and restore the data:
 ```
@@ -64,6 +66,8 @@ parted /dev/mmcblk0 resizepart 8 100%
 cryptsetup resize /dev/mapper/cryptfs_tpm2
 resize2fs /dev/mapper/cryptfs_tpm2
 ```
+![Successfull LUKS boot screen](https://github.com/tibbotech/meta-tibbo/assets/1921587/d5d1b61a-b67c-4204-97fb-6fe4981afa64)
+
 ### Useful TPM commands
 To reset the TPM (keys will be lost):
 ```
@@ -98,3 +102,5 @@ keys will be lost.
 boot. Alternatively you may store the password in another location 
 (say file on another partition or in OTP) and force your INITRD to use it, but 
 it is out of the scope of this simple manual.
+
+[^3]: When TPM is Locked the typical message is: ERROR:tcti:../tpm2-tss-2.3.3/src/tss2-tcti/tcti-device.c:439:Tss2_Tcti_Device_Init() Failed to open device file /dev/tpm0: Device or resource busy
