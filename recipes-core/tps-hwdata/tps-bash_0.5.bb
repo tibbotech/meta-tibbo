@@ -22,7 +22,7 @@ do_install() {
   install -m 0644 ${S}/rpmsbase.sh ${D}/etc/profile.d/
 }
 
-RDEPENDS:${PN} += "virtual/pinsini"
+RDEPENDS:${PN} += "${VIRTUAL_RUNTIME_pinsini}"
 
 COMPATIBLE_HOST = "(arm.*-linux)"
 
