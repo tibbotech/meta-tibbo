@@ -119,7 +119,7 @@ DEPENDS += "log4cpp"
 
 DEPENDS += "fuse-exfat exfat-utils"
 
-#TOOLCHAIN_HOST_TASK_append += "nativesdk-dlib-dev"
+#TOOLCHAIN_HOST_TASK:append += "nativesdk-dlib-dev"
 
 #DEPENDS += "apt"
 

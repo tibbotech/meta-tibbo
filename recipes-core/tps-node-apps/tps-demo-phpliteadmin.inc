@@ -23,12 +23,12 @@ do_install() {
  install -m 0644 ${WORKDIR}/${PN}/conf/napp-demo-phpliteadmin.service ${D}${systemd_unitdir}/system
 }
 
-pkg_postinst_${PN}:append() {
+pkg_postinst:${PN}:append() {
  if type systemctl >/dev/null 2>/dev/null; then
    systemctl reload nginx
  fi;
 }
-pkg_postrm_${PN}:append() {
+pkg_postrm:${PN}:append() {
  if type systemctl >/dev/null 2>/dev/null; then
    systemctl reload nginx
  fi;

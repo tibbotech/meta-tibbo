@@ -21,8 +21,8 @@ addtask do_deploy after do_compile before do_build
 
 BBCLASSEXTEND = "native"
 
-RDEPENDS:${PN}_class-native += "vim-native"
-RDEPENDS:${PN}_class-native += "u-boot-tools-native"
-RDEPENDS:${PN}_class-native += "xboot-tools-native"
+RDEPENDS:${PN}:class-native += "vim-native"
+RDEPENDS:${PN}:class-native += "u-boot-tools-native"
+RDEPENDS:${PN}:class-native += "xboot-tools-native"
 
 LIC_FILES_CHKSUM = "file://${FILESDIR_tibbo}/common-licenses/GPL-3.0-or-later;md5=1c76c4cc354acaac30ed4d5eefea7245"

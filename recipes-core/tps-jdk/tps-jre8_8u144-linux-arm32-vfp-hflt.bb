@@ -10,4 +10,4 @@ DESCRIPTION += ": JRE8 ARM"
 
 COMPATIBLE_HOST = "(arm.*-linux)"
 
-RDEPENDS_${PN} += "alsa-lib"
+RDEPENDS:${PN} += "alsa-lib"

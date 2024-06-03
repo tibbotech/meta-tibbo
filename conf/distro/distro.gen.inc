@@ -57,7 +57,7 @@ BB_HASHSERVE ??= "auto"
 
 # generate locales, but do not install (see IMAGE_LINGUAS in img)
 #GLIBC_GENERATE_LOCALES = "en_US.UTF-8 zh_CN.UTF-8 ru_RU.UTF-8 zh_TW.UTF-8 es_ES.UTF-8 en_GB.UTF-8"
-LOCALE_UTF8_IS_DEFAULT_class-nativesdk = "1"
+LOCALE_UTF8_IS_DEFAULT:class-nativesdk = "1"
 
 DISTRO_FEATURES:append = " directfb"
 #DISTRO_FEATURES:append = " alsa pulseaudio bluez5"

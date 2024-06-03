@@ -4,7 +4,7 @@
 IMAGE_LINGUAS = "en-us en-gb"
 LOCALE_UTF8_ONLY="1"
 
-SYSTEMD_AUTO_ENABLE_busybox-syslog = "disable"
+SYSTEMD_AUTO_ENABLE:busybox-syslog = "disable"
 # we have systemd !
 VIRTUAL-RUNTIME_syslog = ""
 VIRTUAL-RUNTIME_base-utils-syslog = ""

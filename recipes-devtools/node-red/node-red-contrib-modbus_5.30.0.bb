@@ -15,4 +15,4 @@ do_install:append() {
  mv -f ${D}${CUR_DST}/node_modules/${PN}/modbus ${D}${CUR_DST}/
 }
 
-RDEPENDS_${PN} += "node-fs-extra"
+RDEPENDS:${PN} += "node-fs-extra"

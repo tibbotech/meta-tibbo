@@ -48,6 +48,6 @@ RRECOMMENDS:${PN} += "kernel-module-pppox"
 RRECOMMENDS:${PN} += "kernel-module-pptp"
 
 # fixit, but need no enable
-# SYSTEMD_AUTO_ENABLE_ppp@gprs = "enable"
+# SYSTEMD_AUTO_ENABLE:ppp@gprs = "enable"
 
 LIC_FILES_CHKSUM = "file://${FILESDIR_tibbo}/common-licenses/GPL-3.0-or-later;md5=1c76c4cc354acaac30ed4d5eefea7245"
