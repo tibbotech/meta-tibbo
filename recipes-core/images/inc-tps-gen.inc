@@ -1,7 +1,7 @@
 # note: get rid of busybox: take "core-image-full-cmdline"
 
 # generate locales (distro conf), but do not install
-IMAGE_LINGUAS = "en-us en-gb"
+IMAGE_LINGUAS = "en-us"
 LOCALE_UTF8_ONLY="1"
 
 SYSTEMD_AUTO_ENABLE:busybox-syslog = "disable"
