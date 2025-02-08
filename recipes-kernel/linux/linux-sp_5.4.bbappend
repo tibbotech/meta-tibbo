@@ -49,9 +49,7 @@ do_patch:append() {
 KERNEL_FEATURES:append = " cfg/rpi-ovls/ovls-4.19.scc"
 
 KERNEL_FEATURES:append = "${@bb.utils.contains("MACHINE_FEATURES", "touchscreen", " custom/touchscreen/all.scc", "" ,d)}"
-KERNEL_FEATURES:append = "${@bb.utils.contains("MACHINE_FEATURES", "usbgadget", " bsp/pentagram/usb/usb_otg.scc features/usb/usb-gadgets.scc", "" ,d)}"
 KERNEL_FEATURES:append = "${@bb.utils.contains("MACHINE_FEATURES", "3g", " custom/modems/protos.scc", "" ,d)}"
-KERNEL_FEATURES:append = " ${@bb.utils.contains('MACHINE_FEATURES', 'vfat', 'cfg/fs/vfat.scc', '', d)}"
 KERNEL_FEATURES:append = " custom/tunnel/udp.scc"
 KERNEL_FEATURES:append = " cgl/cfg/net/l2tp.scc"
 KERNEL_FEATURES:append = " custom/netfilter/addrtype.scc"
