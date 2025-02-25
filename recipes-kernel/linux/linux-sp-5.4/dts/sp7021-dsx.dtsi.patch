@@ -1,9 +1,9 @@
---- /dev/null	2022-06-16 23:46:24.726356482 +0300
-+++ a/arch/arm/boot/dts/sp7021-dsx.dtsi	2022-06-19 17:40:02.247414447 +0300
-@@ -0,0 +1,340 @@
+--- /dev/null	2025-02-14 17:05:08.453375862 +0300
++++ a/arch/arm/boot/dts/sp7021-dsx.dtsi	2025-02-26 00:04:46.580817453 +0300
+@@ -0,0 +1,333 @@
 +/dts-v1/;
 +
-+#include "sp7021-ChipC.dtsi"
++#include "sp7021-common.dtsi"
 +
 +/ {
 +	model = "SP7021 DSX Rev. A";
@@ -17,6 +17,8 @@
 +		reg = <0x00000000 0x20000000>; /* 512MB */
 +	};
 +};
++
++/delete-node/&mmc1_mux;
 +
 +&rtc {  charging-mode = <0x0E>;  };
 +
@@ -60,11 +62,6 @@
 + pinctrl-names = "default";
 + pinctrl-0 = <&mmc1_mux &mmc1_cd63_mux>;
 + cd-gpios = <&pctl 63 GPIO_ACTIVE_LOW>;
-+};
-+
-+&hdmitx {
-+ pinctrl-names = "default";
-+ pinctrl-0 = <&hdmi_A_tx1>;
 +};
 +
 +&uart1 {
@@ -215,10 +212,6 @@
 +      SPPCTL_IOPAD(90,SPPCTL_PCTL_G_GPIO,0,SPPCTL_PCTL_L_OUT|SPPCTL_PCTL_L_ONV|SPPCTL_PCTL_L_ODR)
 +      SPPCTL_IOPAD(91,SPPCTL_PCTL_G_GPIO,0,SPPCTL_PCTL_L_OUT|SPPCTL_PCTL_L_ONV|SPPCTL_PCTL_L_ODR)
 +    >;
-+ };
-+ hdmi_A_tx1: hdmi_A_tx1_pins {
-+    sppctl,groups = "HDMI_TX1";
-+    sppctl,function = "HDMI_TX";
 + };
 + /* for all eth */
 + ethA_pins: pinmux_ethA_pins {
