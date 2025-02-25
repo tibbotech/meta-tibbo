@@ -44,7 +44,9 @@ do_install:append:tppg1() {
 }
 do_install:append:tppg2() {
  install -m 0644 ${STAGING_KERNEL_DIR}/arch/${ARCH}/boot/dts/sp7021*.dtsi ${D}/opt/tps-shared/dts-orig/
- install -m 0644 ${STAGING_KERNEL_DIR}/arch/${ARCH}/boot/dts/sp_remoteproc.dtsi ${D}/opt/tps-shared/dts-orig/
+ if [ -f "${STAGING_KERNEL_DIR}/arch/${ARCH}/boot/dts/sp_remoteproc.dtsi" ]; then
+   install -m 0644 ${STAGING_KERNEL_DIR}/arch/${ARCH}/boot/dts/sp_remoteproc.dtsi ${D}/opt/tps-shared/dts-orig/
+ fi;
 }
 
 RDEPENDS:${PN} += "dtc tps-wifi"
