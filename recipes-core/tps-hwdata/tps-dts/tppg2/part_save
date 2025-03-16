@@ -1,10 +1,10 @@
 
 part_save_nand() {
- flash_erase --silent /dev/mtd8 0 0
+ flash_erase --silent /dev/mtd7 0 0
  if [ $? -ne 0 ]; then
    return 1;
  fi;
- nandwrite --quiet -p /dev/mtd8 "${1}.dtb"
+ nandwrite --quiet -p /dev/mtd7 "${1}.dtb"
  if [ $? -ne 0 ]; then
    return 1;
  fi;
