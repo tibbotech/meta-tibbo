@@ -1,0 +1,9 @@
+--- a/configs/sp7021_nand_c_defconfig	2025-03-15 01:19:47.048480416 +0300
++++ a/configs/sp7021_nand_c_defconfig	2025-03-17 02:06:08.569173995 +0300
+@@ -88,3 +88,6 @@
+ CONFIG_USB_EHCI_HCD=y
+ CONFIG_USB_OHCI_HCD=n
+ CONFIG_USB_STORAGE=y
++
++# Tibbo: kernel should not use u-boot dtb
++CONFIG_PENTAGRAM_SEPDTS=y
