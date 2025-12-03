@@ -22,25 +22,26 @@ SRC_URI += "file://dts/sp7021-ltpp3g2revD.dts.wifionly.patch"
 #SRC_URI += "file://485/serial_core.c.dbg0.patch"
 
 #SRC_URI += "file://dbg_spi/spi.c.dbg0.patch"
-SRC_URI += "file://mcp251x-dbg/mcp251x.c.dbg0.patch"
-SRC_URI += "file://mcp251x-dbg/mcp251x.c.clk0.patch"
 
-## set GPIO to 83 for ltpp3g2
+# set GPIO to 83 for ltpp3g2
 #SRC_URI += "file://bcmdhd-gpio/dhd_gpio.c.gpio.patch"
 #SRC_URI += "file://bcmdhd-gpio/dhd_gpio.c.of.patch"
 
-# mcp251xfd mainline backport
-SRC_URI += "file://mcp251xfd-backport/mcp251xfd.tar.gz"
+# mcp251xfd mainline backport + filtering add-ons
+#SRC_URI += "file://mcp251xfd-backport/mcp251xfd.tar.gz"
+SRC_URI += "git://github.com/tibbotech/mcp251xfd.git;protocol=https;branch=master;destsuffix=mcp251xfd;name=canfd"
 SRC_URI += "file://mcp251xfd-backport/Kconfig.mcp251xfd.patch"
 SRC_URI += "file://mcp251xfd-backport/Makefile.mcp251xfd.patch"
-#SRC_URI += "git://github.com/tibbotech/mcp251xfd.git;protocol=https;branch=master"
+SRCREV_canfd = "6df8367d8e98cdebeab7a6d303904a443e7f2c95"
+SRCREV_FORMAT:append = "_canfd"
 
 # Goodix dbg
-SRC_URI += "file://goodix-dbg/goodix.c.dbg.patch"
+#SRC_URI += "file://goodix-dbg/goodix.c.dbg.patch"
 
 # mcp251xfd driver
 do_patch:append() {
- cp -r ${WORKDIR}/mcp251xfd ${S}/drivers/net/can/spi/
+# cp -r ${WORKDIR}/mcp251xfd ${S}/drivers/net/can/spi/
+ cp -r ${WORKDIR}/mcp251xfd/mcp251xfd ${S}/drivers/net/can/spi/
 }
 
 #RDEPENDS:kernel-module-bcmdhd += "${@bb.utils.contains('DISTRO_FEATURES', 'wifi', 'bcmdhd-firmware', '', d)}"
