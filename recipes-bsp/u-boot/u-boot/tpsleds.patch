@@ -1,0 +1,112 @@
+diff -urN a/board/sunplus/pentagram_board/Kconfig a/board/sunplus/pentagram_board/Kconfig
+--- a/board/sunplus/pentagram_board/Kconfig	2026-03-12 13:36:08.142052597 +0300
++++ a/board/sunplus/pentagram_board/Kconfig	2026-03-12 13:36:49.199772196 +0300
+@@ -86,6 +86,10 @@
+ 	  for releasing reset pin. IV_MX[6] may be tied
+ 	  on PCB board.
+ 
++config TPS_LEDS
++	bool "TPS LEDS cmd"
++	default n
++
+ config CMD_TPS_MD
+ 	bool "MD button check shell api"
+ 	default n
+diff -urN a/board/sunplus/pentagram_board/Makefile a/board/sunplus/pentagram_board/Makefile
+--- a/board/sunplus/pentagram_board/Makefile	2026-03-12 13:36:08.142052597 +0300
++++ a/board/sunplus/pentagram_board/Makefile	2026-03-12 13:36:49.199772196 +0300
+@@ -6,5 +6,6 @@
+ obj-$(CONFIG_SP_UTIL_MON) += sp_mon.o
+ obj-$(CONFIG_SP_JTAG) += sp_jtag.o
+ obj-$(CONFIG_DM_VIDEO) += video_display.o
++obj-$(CONFIG_TPS_LEDS) += tpsleds.o
+ obj-y += ../common/secure/ed25519/
+ obj-y += ../common/secure/verify/
+\ В конце файла нет новой строки
+diff -urN a/board/sunplus/pentagram_board/tpsleds.c a/board/sunplus/pentagram_board/tpsleds.c
+--- a/board/sunplus/pentagram_board/tpsleds.c	1970-01-01 03:00:00.000000000 +0300
++++ a/board/sunplus/pentagram_board/tpsleds.c	2026-03-12 13:47:16.103615819 +0300
+@@ -0,0 +1,83 @@
++ /*
++  * (C) Copyright 2015
++  * Sunplus Technology. <http://www.sunplus.com/>
++  *
++  * SPDX-License-Identifier:     GPL-2.0+
++  */
++#include <common.h>
++#include <command.h>
++#include <linux/compiler.h>
++#include <errno.h>
++#include <dm.h>
++#include <log.h>
++#include <asm/gpio.h>
++#include <linux/err.h>
++
++#define TPSLEDS_DT 5
++#define TPSLEDS_FT 4
++
++unsigned char leds_current;
++
++struct tpsleds_T {
++ short pin_d;
++ short pin_f;
++};
++
++static struct tpsleds_T tpsleds_d = { -1, -1 };
++
++static void tpsleds_set_1( unsigned char _v) {
++ // zero - enable led at current position, 1 - disable
++ gpio_set_value( tpsleds_d.pin_d, ( _v ? 0 : 1));
++ // notify
++ gpio_set_value( tpsleds_d.pin_f, 1);
++ gpio_set_value( tpsleds_d.pin_f, 0);
++ return;  }
++
++static void tpsleds_set( unsigned char _m) {
++ int i = 0;
++ leds_current = _m;
++ for ( i = 0; i < 5; i++) tpsleds_set_1( ( _m & 0x01 << i));
++ return;  }
++
++static int tpsleds_init( void) {
++ int ret;
++ if ( tpsleds_d.pin_d == -1) {
++   ret = gpio_request( TPSLEDS_DT, "tpsleds dt");
++   if ( ret == 0) {  gpio_direction_output( TPSLEDS_DT, 0);  tpsleds_d.pin_d = TPSLEDS_DT;  }
++   if ( ret) printf( "gpio pin d %d request failed\n", TPSLEDS_DT);
++ }
++ if ( tpsleds_d.pin_f == -1) {
++   ret = gpio_request( TPSLEDS_FT, "tpsleds ft");
++   if ( ret == 0) {  gpio_direction_output( TPSLEDS_FT, 0);  tpsleds_d.pin_f = TPSLEDS_FT;  }
++   if ( ret) printf( "gpio pin f %d request failed\n", TPSLEDS_FT);
++ }
++ if ( tpsleds_d.pin_d != -1 && tpsleds_d.pin_f != -1) return( 0);
++ return( 1);  }
++
++static int do_tpsleds_val(struct cmd_tbl *cmdtp, int flag, int argc, char * const argv[]) {
++ int ret;
++ if ( argc < 2) return( CMD_RET_USAGE);
++ if ( tpsleds_init()) return( 0);
++ int val;
++ val = simple_strtoul( argv[ 1], NULL, 10);
++ tpsleds_set( val);
++ return( 0);  }
++
++static int do_tpsleds_set(struct cmd_tbl *cmdtp, int flag, int argc, char * const argv[]) {
++ int ret;
++ if ( argc < 3) return( CMD_RET_USAGE);
++ if ( tpsleds_init()) return( 0);
++ int ledn, val, setval = leds_current;
++ ledn = simple_strtoul( argv[ 1], NULL, 10);
++ val  = ( simple_strtoul( argv[ 2], NULL, 10) & 0x01);
++ setval = ( setval & ~(1 << ledn)) | ( val << ledn);
++ tpsleds_set( setval);
++ return( 0);  }
++
++/**************************************************/
++U_BOOT_CMD(
++ tpsleds_val, 3, 1, do_tpsleds_val, "Set TPS LEDS value", "value"
++);
++U_BOOT_CMD(
++ tpsleds_set, 3, 1, do_tpsleds_set, "Set certain TPS LED value", "lednum value"
++);
