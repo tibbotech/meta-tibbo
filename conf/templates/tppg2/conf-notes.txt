@@ -10,6 +10,7 @@ SDK building:
 
 Machines:
  "tppg2" is TPP gen 2 board (sp7021-SoC based)
+ "tppg2-prod" is TPPg2 board with progress and verification
  "sp7021-arm5" is firmware for TPPg2 coprocessor
  "tppg1" is TPP gen 1 board (discontinued)
 
