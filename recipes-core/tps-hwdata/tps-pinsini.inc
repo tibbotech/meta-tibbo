@@ -6,6 +6,8 @@ SECTION = "base"
 PACKAGES = "${PN}"
 COMPATIBLE_MACHINE = "(tppg1|tppg2)"
 
+PROVIDES = "virtual/pinsini"
+
 inherit allarch
 
 S = "${WORKDIR}"
