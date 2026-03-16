@@ -1,9 +1,5 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/linux-sp-5.4:"
 
-COMPATIBLE_MACHINE:append = "|tppg2"
-
-SRC_URI:append = " file://kmeta-tppg2;type=kmeta;name=kmeta-tppg2;destsuffix=kmeta-tppg2"
-
 # additional DTSes
 SRC_URI += "file://dts/sp7021-ltpp3g2revF.dts.patch"
 SRC_URI += "file://dts/sp7021-ttt.dts.patch"
@@ -27,37 +23,10 @@ SRC_URI += "file://dts/sp7021-ltpp3g2revD.dts.wifionly.patch"
 #SRC_URI += "file://bcmdhd-gpio/dhd_gpio.c.gpio.patch"
 #SRC_URI += "file://bcmdhd-gpio/dhd_gpio.c.of.patch"
 
-# mcp251xfd mainline backport + filtering add-ons
-#SRC_URI += "file://mcp251xfd-backport/mcp251xfd.tar.gz"
-SRC_URI += "git://github.com/tibbotech/mcp251xfd.git;protocol=https;branch=master;destsuffix=mcp251xfd;name=canfd"
-SRC_URI += "file://mcp251xfd-backport/Kconfig.mcp251xfd.patch"
-SRC_URI += "file://mcp251xfd-backport/Makefile.mcp251xfd.patch"
-SRCREV_canfd = "6df8367d8e98cdebeab7a6d303904a443e7f2c95"
-SRCREV_FORMAT:append = "_canfd"
-
 # Goodix dbg
 #SRC_URI += "file://goodix-dbg/goodix.c.dbg.patch"
 
-# mcp251xfd driver
-do_patch:append() {
-# cp -r ${WORKDIR}/mcp251xfd ${S}/drivers/net/can/spi/
- cp -r ${WORKDIR}/mcp251xfd/mcp251xfd ${S}/drivers/net/can/spi/
-}
-
-#RDEPENDS:kernel-module-bcmdhd += "${@bb.utils.contains('DISTRO_FEATURES', 'wifi', 'bcmdhd-firmware', '', d)}"
-#RRECOMMENDS:${PN} += "kernel-module-bcmdhd"
-
 KERNEL_FEATURES:append = " cfg/rpi-ovls/ovls-4.19.scc"
 
-KERNEL_FEATURES:append = "${@bb.utils.contains("MACHINE_FEATURES", "touchscreen", " custom/touchscreen/all.scc", "" ,d)}"
-KERNEL_FEATURES:append = "${@bb.utils.contains("MACHINE_FEATURES", "3g", " custom/modems/protos.scc", "" ,d)}"
-KERNEL_FEATURES:append = " custom/tunnel/udp.scc"
-KERNEL_FEATURES:append = " cgl/cfg/net/l2tp.scc"
-KERNEL_FEATURES:append = " custom/netfilter/addrtype.scc"
-#KERNEL_FEATURES:append = "${@bb.utils.contains("MACHINE_FEATURES", "wifi", " cfg/wifi/tppg2_brcm.scc", "" ,d)}"
-KERNEL_FEATURES:append = "${@bb.utils.contains("MACHINE_FEATURES", "wifi", " cfg/wifi/tppg2_brcmI.scc", "" ,d)}"
-KERNEL_FEATURES:append = " tibbits/all.scc"
-KERNEL_FEATURES:append = " custom/tpm.scc"
-KERNEL_FEATURES:append = " custom/dm-crypt.scc"
-
-KERNEL_DEVICETREE:append:tppg2 = " sp7021-ltpp3g2-empty.dtb"
+CANFD_BRANCH = "master"
+CANFD_REV = "e0166241f6123658e03ef08a4823deed89e09d30"
