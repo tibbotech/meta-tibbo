@@ -2,7 +2,6 @@ DESCRIPTION = "TTF test"
 HOMEPAGE = "http://downloads.openmoko.org/fstests/fstests/tests"
 SECTION = "console/utils"
 LICENSE = "Apache-2.0"
-SRCREV = "${AUTO}"
 
 SRC_URI  = "file://Makefile"
 SRC_URI += "file://test-freetype.c"

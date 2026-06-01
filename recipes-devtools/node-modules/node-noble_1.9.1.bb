@@ -6,10 +6,9 @@ SECTION = "nodejs/module"
 
 inherit npm
 
-NPMPN = "${PN}"
+SRC_URI  = "npm://registry.npmjs.org/;package=noble;version=${PV}"
+SRC_URI += "npmsw://${THISDIR}/${BPN}/npm-shrinkwrap.json"
 
-SRC_URI  = "git://github.com/noble/noble.git;protocol=https;branch=master;tag=v${PV}"
+S = "${WORKDIR}/npm"
 
-S = "${WORKDIR}/git"
-
-LIC_FILES_CHKSUM = "file://LICENSE;md5=0835ade698e0bcf8506ecda2f7b4f302"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=461a4d93dce2e9cff358d977ec302364"

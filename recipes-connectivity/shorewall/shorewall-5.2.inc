@@ -5,7 +5,7 @@ LICENSE = "GPL-2.0-only"
 SECTION = "network"
 PRIORITY = "optional"
 
-SRC_URI = "http://www.shorewall.net/pub/shorewall/5.2/shorewall-${PV}/${BPN}-${PV}.tar.bz2"
+SRC_URI = "https://www.shorewall.net/pub/shorewall/5.2/shorewall-${PV}/${BPN}-${PV}.tar.bz2"
 
 S = "${WORKDIR}/${PN}-${PV}"
 

@@ -5,10 +5,9 @@ SECTION = "kernel/modules"
 PRIORITY = "optional"
 LICENSE = "GPL-2.0-only"
 PR = "r1"
+SRCREV = "ae46fc7e9b6ff65a194cee7c6f50398e5f99fdd4"
 
 COMPATIBLE_MACHINE = "(tppg1)"
-
-SRCREV="${AUTOREV}"
 
 PACKAGES =+ "${PN}-includes"
 PACKAGE_ARCH:${PN}-includes = "all"

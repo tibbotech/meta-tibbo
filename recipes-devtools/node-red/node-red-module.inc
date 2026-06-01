@@ -3,8 +3,12 @@ SECTION = "nodejs/module"
 
 inherit npm
 
-S = "${WORKDIR}/git"
+SRC_URI  = "npm://registry.npmjs.org/;package=${BPN};version=${PV}"
+SRC_URI += "npmsw://${THISDIR}/${BPN}/npm-shrinkwrap.json"
+
+S = "${WORKDIR}/npm"
 
 FILES:${PN} += "${libdir}/node_modules/*"
 
 RDEPENDS:${PN} += "node-red"
+

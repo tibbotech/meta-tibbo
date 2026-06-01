@@ -25,5 +25,5 @@ IMAGE_INSTALL += "tcf-agent"
 IMAGE_INSTALL += "tzdata-asia"
 
 IMAGE_INSTALL += "tps-wan"
-IMAGE_INSTALL += "tps-tios-sp7021"
+#IMAGE_INSTALL += "tps-tios-sp7021"
 IMAGE_INSTALL += "tps-resetconf"

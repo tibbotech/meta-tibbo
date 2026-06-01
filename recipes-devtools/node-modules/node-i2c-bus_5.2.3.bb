@@ -3,12 +3,12 @@ HOMEPAGE = "https://www.npmjs.com/package/i2c-bus"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
 LICENSE = "MIT"
 SECTION = "nodejs/module"
-SRCREV="${AUTOREV}"
 
 inherit npm
 
-SRC_URI  = "git://github.com/fivdi/i2c-bus.git;protocol=https;branch=master"
+SRC_URI  = "npm://registry.npmjs.org/;package=i2c-bus;version=${PV}"
+SRC_URI += "npmsw://${THISDIR}/${BPN}/npm-shrinkwrap.json"
 
-S = "${WORKDIR}/git"
+S = "${WORKDIR}/npm"
 
-LIC_FILES_CHKSUM = "file://LICENSE;md5=550794465ba0ec5312d6919e203a55f9"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=564c07e46fb0c4fe02285be2fcff614c"

@@ -4,9 +4,6 @@ LICENSE = "Apache-2.0"
 
 require node-red-module.inc
 
-SRC_URI  = "npm://registry.npmjs.org/;package=${BPN};version=${PV}"
-SRC_URI += "npmsw://${THISDIR}/${BPN}/npm/npm-shrinkwrap.json"
-
 CUR_DST="/usr/lib/node_modules/${PN}"
 
 do_install() {
@@ -22,5 +19,3 @@ do_install() {
  install -m 0644 ${S}/*.html ${D}${CUR_DST}/
  install -m 0644 ${S}/*.js ${D}${CUR_DST}/
 }
-
-LIC_FILES_CHKSUM = "file://LICENSE;md5=6621dba0ae00c5595cc3b482008b021a"

@@ -4,7 +4,7 @@ MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
 LICENSE = "GPL-3.0-or-later"
 SECTION = "libs"
 PACKAGES = "${PN}-dbg ${PN}-dev ${PN}-test ${PN}-node ${PN}"
-SRCREV="${AUTOREV}"
+SRCREV = "8542ea5a8e5104b4d76d88874c396848ed6d6852"
 
 SUMMARY:${PN}-node = "SystemD interface NodeJs object"
 

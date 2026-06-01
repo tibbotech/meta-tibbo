@@ -3,7 +3,7 @@ LICENSE = "GPL-2.0-or-later"
 
 INC_PR = "r1"
 
-inherit autotools pkgconfig
+inherit pkgconfig cmake
 
 SRC_URI = "http://download.savannah.nongnu.org/releases/linphone/${PN}/sources/${PN}-${PV}.tar.gz"
 
@@ -16,3 +16,4 @@ do_compile:append() {
 
 }
 
+DEPENDS = "bctoolbox"

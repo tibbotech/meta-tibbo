@@ -2,7 +2,6 @@ DESCRIPTION = "Tios TTF fonts"
 HOMEPAGE = "http://www.x.org"
 SECTION = "x11/fonts"
 LICENSE = "Apache-2.0"
-SRCREV = "${AUTO}"
 
 SRC_URI += "file://ARIALUNI.TTF.gz"
 

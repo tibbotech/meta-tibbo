@@ -5,7 +5,7 @@ AUTHOR = "Dvorkin Dmitry <dvorkin@tibbo.com>"
 SECTION = "kernel/modules"
 PRIORITY = "optional"
 LICENSE = "GPL-2.0-only"
-SRCREV="${AUTOREV}"
+SRCREV = "e7426655ef5056a66259bba9af5690b98d4e200b"
 
 COMPATIBLE_MACHINE = "(tppg1|tppg2)"
 

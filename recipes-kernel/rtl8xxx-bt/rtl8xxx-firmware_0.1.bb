@@ -8,8 +8,6 @@ PR = "r1"
 
 COMPATIBLE_MACHINE = "(tppg1)"
 
-SRCREV="${AUTOREV}"
-
 S = "${WORKDIR}/rtk_hciattach"
 
 SRC_URI  = "file://rtl8821c_config"

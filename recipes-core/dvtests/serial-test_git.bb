@@ -4,7 +4,7 @@ MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
 LICENSE = "MIT"
 SECTION = "console/utils"
 PACKAGES = "${PN}-dbg ${PN}"
-SRCREV="${AUTOREV}"
+SRCREV="6a28493a29f7b941172bc58cf4fdabbf8109022f"
 
 inherit autotools
 

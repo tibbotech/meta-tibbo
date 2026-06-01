@@ -5,10 +5,9 @@ SECTION = "kernel/modules"
 PRIORITY = "optional"
 LICENSE = "GPL-2.0-only"
 PR = "r1"
+SRCREV = "09eb91f52a639ec5e4c5c4c98dc2afede046cf20"
 
 COMPATIBLE_MACHINE = "(tppg1)"
-
-SRCREV="${AUTOREV}"
 
 S = "${WORKDIR}/git"
 

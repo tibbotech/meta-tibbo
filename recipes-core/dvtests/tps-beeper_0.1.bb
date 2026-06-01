@@ -3,7 +3,7 @@ HOMEPAGE = "http://tibbo.com/"
 MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
 LICENSE = "GPL-3.0-or-later"
 SECTION = "console/utils"
-SRCREV="${AUTOREV}"
+SRCREV="324e36c17f701c08b27747f9441eb29fb052cf0e"
 
 S = "${WORKDIR}/git"
 

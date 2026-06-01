@@ -1,7 +1,7 @@
 SUMMARY = "Broadcom bcmdhd firmware files"
 DESCRIPTION = "Firmware for Broadcom BCMDHD (development AP6255)."
 LICENSE = "Broadcom"
-SRCREV="${AUTOREV}"
+SRCREV = "5efd1208df6e97036596b092ceb4b9bf703ed957"
 
 SRC_URI  = "git://github.com/tibbotech/bcmdhd-firmware.git;protocol=https;branch=master"
 

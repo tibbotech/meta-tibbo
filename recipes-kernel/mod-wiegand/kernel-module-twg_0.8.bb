@@ -6,7 +6,7 @@ SECTION = "kernel/modules"
 PRIORITY = "optional"
 LICENSE = "GPL-2.0-only"
 PR = "r1"
-SRCREV="${AUTOREV}"
+SRCREV = "09743d760d75b99819703e361963d36c8416f633"
 
 COMPATIBLE_MACHINE = "(tppg1|tppg2)"
 

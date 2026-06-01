@@ -5,7 +5,7 @@ LICENSE = "MIT"
 inherit npm
 
 SRC_URI  = "npm://registry.npmjs.org/;package=@savoirfairelinux/node-server-example;version=${PV}"
-SRC_URI += "file://npm/npm-shrinkwrap.json"
+SRC_URI += "npmsw://${THISDIR}/${BPN}/npm-shrinkwrap.json"
 
 S = "${WORKDIR}/npm"
 

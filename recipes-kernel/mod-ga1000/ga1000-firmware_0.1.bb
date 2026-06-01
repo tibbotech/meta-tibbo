@@ -5,7 +5,7 @@ SECTION = "kernel"
 PRIORITY = "optional"
 LICENSE = "GPL-2.0-only"
 PR = "r1"
-SRCREV="${AUTOREV}"
+SRCREV = "1778cb03834414b2140eea63323ba2e4c9992301"
 
 # src in /files/ga1000-firmware/*
 S = "${WORKDIR}/git"

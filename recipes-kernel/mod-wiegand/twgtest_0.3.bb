@@ -4,7 +4,7 @@ MAINTAINER = "Dmitry Dvorkin <dvorkin@tibbo.com>"
 LICENSE = "GPL-2.0-only"
 SECTION = "console/utils"
 PACKAGES = "${PN}-dbg ${PN}"
-SRCREV="${AUTOREV}"
+SRCREV = "bb907bc54dfb01e43497e8b3ce425cbe81cd3e82"
 
 S = "${WORKDIR}/git"
 
