@@ -26,3 +26,5 @@ PACKAGE_INSTALL = "initramfs-framework-base \
 
 # required for Nanbield
 IMAGE_NAME_SUFFIX=""
+
+EXTRA_IMAGEDEPENDS += "${@bb.utils.contains("MACHINE_FEATURES", "optee", "optee-client", "", d)}"
