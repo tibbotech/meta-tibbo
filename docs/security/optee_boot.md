@@ -1,3 +1,4 @@
+```
 {{emmc_boot}}
 [d] common/bootmain.c :128
 dev=2
@@ -160,3 +161,4 @@ Tibbo Project System (open-source only) Linux 5.4.35-sp-standard (armv7l)
 OS Build: #1 SMP PREEMPT Fri Mar 7 06:10:04 UTC 2025
 HW Date/Time: Tue Sep 22  2026 06:25:05
 tppg2 login:
+```
