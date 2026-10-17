@@ -1,3 +1,6 @@
+Upstream-Status: Inappropriate [local board changes]
+
+===================================================================
 --- a/arch/arm/boot/dts/pentagram-sc7021-achip.dtsi	2019-01-31 12:11:46.233165436 +0300
 +++ a/arch/arm/boot/dts/pentagram-sc7021-achip.dtsi	2019-01-31 12:12:20.932708291 +0300
 @@ -668,10 +668,12 @@

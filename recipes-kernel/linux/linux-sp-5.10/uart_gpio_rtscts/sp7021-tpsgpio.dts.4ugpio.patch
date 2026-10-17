@@ -1,3 +1,6 @@
+Upstream-Status: Inappropriate [debugging]
+
+===================================================================
 --- a/arch/arm/boot/dts/sp7021-tpsgpio.dts	2019-10-24 11:11:18.735427930 +0300
 +++ a/arch/arm/boot/dts/sp7021-tpsgpio.dts	2019-10-24 11:14:13.940814797 +0300
 @@ -49,9 +49,22 @@

@@ -1,3 +1,6 @@
+Upstream-Status: Inappropriate [local board changes]
+
+===================================================================
 --- a/scripts/luks-setup.sh
 +++ a/scripts/luks-setup.sh
 @@ -95,6 +95,8 @@

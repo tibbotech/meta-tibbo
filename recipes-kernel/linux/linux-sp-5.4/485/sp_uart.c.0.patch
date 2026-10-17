@@ -1,3 +1,6 @@
+Upstream-Status: Inappropriate [local board changes]
+
+===================================================================
 --- a/drivers/tty/serial/sp_uart.c	2020-06-16 18:12:46.493173672 +0300
 +++ a/drivers/tty/serial/sp_uart.c	2020-06-17 00:52:58.468559066 +0300
 @@ -1689,6 +1689,26 @@

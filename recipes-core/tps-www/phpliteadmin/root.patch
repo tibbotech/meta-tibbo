@@ -1,3 +1,6 @@
+Upstream-Status: Inappropriate [local board changes]
+
+===================================================================
 diff -ur a/phpliteadmin.php a/phpliteadmin.php
 --- a/phpliteadmin.php	2015-07-05 18:55:04.000000000 +0300
 +++ a/phpliteadmin.php	2016-08-11 18:53:28.977329904 +0300

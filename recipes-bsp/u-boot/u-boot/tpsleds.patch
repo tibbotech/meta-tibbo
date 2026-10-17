@@ -1,3 +1,6 @@
+Upstream-Status: Inappropriate [local board changes]
+
+===================================================================
 diff -urN a/board/sunplus/pentagram_board/Kconfig a/board/sunplus/pentagram_board/Kconfig
 --- a/board/sunplus/pentagram_board/Kconfig	2026-03-12 13:36:08.142052597 +0300
 +++ a/board/sunplus/pentagram_board/Kconfig	2026-03-12 13:36:49.199772196 +0300

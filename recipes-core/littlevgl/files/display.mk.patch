@@ -1,3 +1,6 @@
+Upstream-Status: Inappropriate [OE changes]
+
+===================================================================
 --- a/lv_drivers/display/display.mk	2019-11-14 17:27:08.154860616 +0800
 +++ a/lv_drivers/display/display.mk	2019-11-14 17:24:15.412844821 +0800
 @@ -9,4 +9,4 @@

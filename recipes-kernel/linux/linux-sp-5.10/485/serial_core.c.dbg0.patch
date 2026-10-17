@@ -1,3 +1,6 @@
+Upstream-Status: Inappropriate [debugging]
+
+===================================================================
 --- a/drivers/tty/serial/serial_core.c	2020-06-16 18:12:42.671173451 +0300
 +++ a/drivers/tty/serial/serial_core.c	2020-06-17 01:09:00.434614568 +0300
 @@ -1312,19 +1312,23 @@

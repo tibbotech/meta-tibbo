@@ -1,3 +1,6 @@
+Upstream-Status: Inappropriate [local board changes]
+
+===================================================================
 --- a/scripts/init.cryptfs	2024-04-28 03:14:07.821917756 +0300
 +++ a/scripts/init.cryptfs	2024-04-28 03:16:06.105547238 +0300
 @@ -217,6 +217,8 @@
