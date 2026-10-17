@@ -6,7 +6,7 @@ SECTION = "base"
 PACKAGES = "${PN}"
 COMPATIBLE_MACHINE = "(tppg1|tppg2)"
 
-RPROVIDES:${PN} = "virtual/dtsini"
+#RPROVIDES:${PN} = "virtual/dtsini"
 
 inherit allarch
 
